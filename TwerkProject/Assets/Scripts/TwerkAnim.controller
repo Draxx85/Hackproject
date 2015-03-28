@@ -53,6 +53,29 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!1101 &110100024
+AnimatorStateTransition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 4
+    m_ConditionEvent: transitionInt
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 110242870}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_ExitTime: .899999976
+  m_HasExitTime: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &110116800
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -237,13 +260,47 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &110205508
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: RightMiss
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_Motion: {fileID: 7400000, guid: 6a42e7b15e3a52d429b10a244bb9aa58, type: 2}
+  m_Tag: 
+--- !u!1102 &110225384
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: LeftMiss
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_Motion: {fileID: 7400000, guid: 292a322e24149904393275c2a441874f, type: 2}
+  m_Tag: 
 --- !u!1102 &110226620
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Miss
+  m_Name: Left
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -253,7 +310,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: b64a0e948e3a8c142b5881015f3bbb5d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 52b174a77d8e5e646aaf786eab187b73, type: 2}
   m_Tag: 
 --- !u!1102 &110231148
 AnimatorState:
@@ -261,7 +318,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Poor
+  m_Name: Down
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -271,7 +328,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 3f5d342965bb77b40bec691aacd93f70, type: 2}
+  m_Motion: {fileID: 7400000, guid: 131db579d0fc3be4f9aff8221b3bd0b4, type: 2}
   m_Tag: 
 --- !u!1102 &110242870
 AnimatorState:
@@ -300,7 +357,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Amazing
+  m_Name: Up
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -310,7 +367,41 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 96dc56afd6d23ec49b9629d55a0d2572, type: 2}
+  m_Motion: {fileID: 7400000, guid: c614006450396734b8a89d7a7354118f, type: 2}
+  m_Tag: 
+--- !u!1102 &110277804
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: UpMiss
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_Motion: {fileID: 7400000, guid: 42e3c1a7cc2afbb499bdc951aa151422, type: 2}
+  m_Tag: 
+--- !u!1102 &110285728
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: DownMiss
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_Motion: {fileID: 7400000, guid: 8fd8847f4a2aab54bb4bef7ff8e34d9d, type: 2}
   m_Tag: 
 --- !u!1102 &110297582
 AnimatorState:
@@ -318,7 +409,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Great
+  m_Name: Right
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -328,7 +419,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 56fb01a5a0ae4b844bf9bb490b2fbe80, type: 2}
+  m_Motion: {fileID: 7400000, guid: 31a9eb5e557cbbe43ba0ca9108ed2897, type: 2}
   m_Tag: 
 --- !u!1107 &110785830
 AnimatorStateMachine:
@@ -340,19 +431,31 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 110242870}
-    m_Position: {x: 36, y: 156, z: 0}
+    m_Position: {x: 300, y: 84, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110272866}
-    m_Position: {x: 240, y: -12, z: 0}
+    m_Position: {x: 300, y: -48, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110297582}
-    m_Position: {x: 432, y: 96, z: 0}
+    m_Position: {x: 552, y: 84, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110231148}
-    m_Position: {x: 444, y: 204, z: 0}
+    m_Position: {x: 300, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110226620}
-    m_Position: {x: 276, y: 300, z: 0}
+    m_Position: {x: 0, y: 84, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110277804}
+    m_Position: {x: 540, y: -12, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110205508}
+    m_Position: {x: 540, y: 180, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110285728}
+    m_Position: {x: 60, y: 180, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110225384}
+    m_Position: {x: 60, y: -12, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -361,7 +464,7 @@ AnimatorStateMachine:
       first: {fileID: 110785830}
       second: []
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 0, y: 72, z: 0}
+  m_AnyStatePosition: {x: 0, y: -96, z: 0}
   m_EntryPosition: {x: -24, y: 264, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
