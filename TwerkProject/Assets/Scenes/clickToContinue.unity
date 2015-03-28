@@ -242,7 +242,6 @@ GameObject:
   - 114: {fileID: 1389233376}
   - 114: {fileID: 1389233375}
   - 114: {fileID: 1389233374}
-  - 114: {fileID: 1389233378}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -305,18 +304,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &1389233378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1389233373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f23a3d28bcfe9c143ab3d4d6f97eacf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: comboScene
 --- !u!1 &1816677019
 GameObject:
   m_ObjectHideFlags: 0

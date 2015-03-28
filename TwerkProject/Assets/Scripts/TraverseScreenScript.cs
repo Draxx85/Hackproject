@@ -8,9 +8,13 @@ public class TraverseScreenScript : MonoBehaviour {
     void OnGUI()
     {
         if (GUI.Button(new Rect(500, 450, 200, 50), "Click Here or Press Start"))
-        {
-            print("Load Scene: " + sceneToLoad);
-            Application.LoadLevel(sceneToLoad); 
+		{
+			if (!string.IsNullOrEmpty (sceneToLoad)) {
+				print ("Load Scene: " + sceneToLoad);
+				Application.LoadLevel (sceneToLoad);
+			} else {
+				print ("No scene to load");
+			}
         }
     }
 
@@ -22,9 +26,13 @@ public class TraverseScreenScript : MonoBehaviour {
     void Update()
     {
         if (Input.GetButton("Submit"))
-        {
-            print("Load Scene: " + sceneToLoad);
-            Application.LoadLevel(sceneToLoad); 
+		{
+			if (!string.IsNullOrEmpty (sceneToLoad)) {
+				print ("Load Scene: " + sceneToLoad);
+				Application.LoadLevel (sceneToLoad);
+			} else {
+				print ("No scene to load");
+			}
         }
     }
 }
