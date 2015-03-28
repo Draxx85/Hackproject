@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 	public int drainAmount = 4;
 	public bool hasNewScore = true;
 	public int scoreDelta = 5;
+
 	private float lastDrainTime = 0.0f;
 
 	// Use this for initialization

@@ -28,7 +28,7 @@ public class MeterManager : MonoBehaviour
 		} else if (slider.value <= YellowThresholdPercent) {
 			fillImage.color = Color.yellow;
 		} else {
-			fillImage.color = Color.green;
+			fillImage.color = Color.white;
 		}
 	}
 }
