@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		scoreDelta = 5;
-
 		if (hasNewScore) {
 			ScoreManager.score += scoreDelta;
 			MeterManager.fill += scoreDelta;
