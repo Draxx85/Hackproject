@@ -13,13 +13,13 @@ public class PlayerMovement : MonoBehaviour {
     public float slowMoveSpeedRatio;
     public float fastMoveSpeedRatio;
 
-	public bool isGrounded {
+//	public bool isGrounded {
 //		get {
 //            // Look down our height for the platform layer
 //            Collider2D hit = Physics2D.OverlapCircle((Vector2)collider2D.bounds.center - new Vector2(0, collider2D.bounds.extents.y), 0.30f, 1 << LayerMask.NameToLayer("Platform"));
 //            return hit != null;
 //		}
-	}
+//	}
 
     public bool isDucking
     {
@@ -37,8 +37,6 @@ public class PlayerMovement : MonoBehaviour {
 	private float currentMoveSpeed;
     private float currentAmplifyJumpStrength;
     private float currentAmplifyMoveSpeed;
-
-    private DirectionalPlatform[] dplatforms;
 
     void Start()
     {
