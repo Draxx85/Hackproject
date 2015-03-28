@@ -9,7 +9,7 @@ InputManager:
     m_Name: Left
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: d
+    negativeButton: 
     positiveButton: a
     altNegativeButton: 
     altPositiveButton: 
@@ -25,7 +25,7 @@ InputManager:
     m_Name: Right
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: a
+    negativeButton: 
     positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
@@ -41,7 +41,7 @@ InputManager:
     m_Name: Up
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: s
+    negativeButton: 
     positiveButton: w
     altNegativeButton: 
     altPositiveButton: 
@@ -57,7 +57,7 @@ InputManager:
     m_Name: Down
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: w
+    negativeButton: 
     positiveButton: s
     altNegativeButton: 
     altPositiveButton: 
