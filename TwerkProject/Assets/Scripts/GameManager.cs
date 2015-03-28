@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ScoreManager.score = 1;
+		MeterManager.fill = 50;
 //		GameObject.FindObjectsOfType<PlayerController>()
 //		foreach (PlayerController playerController in playerScores.Keys) {
 //			scoreBoard[playerController].text = playerController.tag + ": " + playerScores[playerController];
