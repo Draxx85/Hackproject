@@ -1,1 +1,7 @@
-TwerkProject/Temp/UnityLockfile
+TwerkProject/Temp/
+TwerkProject/UpgradeLog2.htm
+TwerkProject/TwerkProject-csharp.sln
+TwerkProject/TwerkProject.sln
+TwerkProject/obj/
+*.csproj
+*.unityproj
