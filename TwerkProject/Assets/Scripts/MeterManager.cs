@@ -6,15 +6,15 @@ public class MeterManager : MonoBehaviour
 {
 	public delegate void OnMeterFullEventHandler();
 
-	private const int YellowThresholdPercent = 35;
-	private const int RedThresholdPercent = 10;
+	private const int YellowThresholdPercent = 200;
+	private const int RedThresholdPercent = 50;
 
 	public static int fill;
 	public static event OnMeterFullEventHandler MeterHasFilled;
 
 	private Slider slider;
 
-	public int startValue = 10;
+	public int startValue = 15;
 	public Image fillImage;
 	
 	void Awake ()

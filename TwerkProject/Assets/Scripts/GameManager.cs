@@ -17,9 +17,9 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	public int drainInterval = 3;
-	public int drainAmount = 4;
+	public int drainAmount = 12;
 	public bool hasNewScore = true;
-	public int scoreDelta = 5;
+	public int scoreDelta = 15;
 
 	private float lastDrainTime = 0.0f;
 
