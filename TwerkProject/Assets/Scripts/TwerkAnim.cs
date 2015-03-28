@@ -9,15 +9,15 @@ public class TwerkAnim : MonoBehaviour {
 	 * 3 - Great
 	 * 4 - Perfect
 	 */
-	private Color playerColor = new Color();
 
-
+	Animator animator;
+	
 	float animTime = 0.0f;
 	int transitionInt = -1;
 
 // Use this for initialization
 	void Start () {
-
+		animator = GetComponent<Animator>();
 		InvokeRepeating("determineAnimation", 0.0f, 4.0f);
 	}
 	
@@ -33,19 +33,7 @@ public class TwerkAnim : MonoBehaviour {
 		transitionInt = Random.Range(1, 4);
 		animTime = 0;
 
-		switch (transitionInt) {
-		case 1:
-			// put the color changes here
-			break;
-		case 2:
-			// put the color changes here
-			break;
-		case 3:
-			// put the color changes here
-			break;
-		case 4:
-			//stuff
-			break;
-		}
+		Debug.Log ("Transition: " + transitionInt.ToString (), gameObject);
+		animator.SetInteger ("transitionInt", transitionInt);
 	}
 }
