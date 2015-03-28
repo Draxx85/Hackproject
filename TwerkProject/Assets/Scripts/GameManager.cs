@@ -16,21 +16,32 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	
+	public int drainInterval = 3;
+	public int drainAmount = 4;
 	public bool hasNewScore = true;
 	public int scoreDelta = 5;
+	private float lastDrainTime = 0.0f;
 
 	// Use this for initialization
     void Start()
 	{
 		ScoreManager.score = 1;
 		MeterManager.fill = 10;
+		lastDrainTime = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		// Update the score and meter
 		if (hasNewScore) {
 			ScoreManager.score += scoreDelta;
 			MeterManager.fill += scoreDelta;
+		}
+
+		// Drain the meter over time
+		if (Time.time - lastDrainTime > drainInterval) {
+			lastDrainTime = Time.time;
+			MeterManager.fill -= drainAmount;
 		}
 
 		hasNewScore = false;
