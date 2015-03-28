@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour {
     void Start()
 	{
 		ScoreManager.score = 1;
-		MeterManager.fill = 10;
 		lastDrainTime = Time.time;
 	}
 	
