@@ -12,15 +12,25 @@ public class TwerkAnim : MonoBehaviour {
 	 */
 	
 	int POOR_MIN_THRESHOLD = 10;
-	int GREAT_MIN_THRESHOLD = 50;
+	int OKAY_MIN_THRESHOLD = 40;
+	int GREAT_MIN_THRESHOLD = 60;
 	int AMAZING_MIN_THRESHOLD = 80;
 
-	int missAnim = 1;
 
-	int STREAK2x = 10;
-	int STREAK3x = 20;	
-	int STREAK4x = 30;
-	int STREAK5x = 40;
+	private const int MISS= 1;
+	private const int POOR= 2;
+	private const int OKAY = 3;
+	private const int GREAT= 4;
+	private const int AMAZING = 5;
+
+	private int animationQuality = 0;
+	private int missAnim = 1;
+	private int multiplier = 1;
+
+	private int STREAK2x = 10;
+	private int STREAK3x = 20;	
+	private int STREAK4x = 30;
+	private int STREAK5x = 40;
 
 
 	Animator animator;
@@ -50,30 +60,41 @@ public class TwerkAnim : MonoBehaviour {
 		determineAnimation (Random.Range (1, 100), Random.Range (1,4));
 	}	
 
-	public int getMultiplier ( int streak) {
-		if (streak < STREAK2x)
-			return 1;
-		else if (streak < STREAK3x)
-			return 2;
-		else if (streak < STREAK4x)
-			return 3;
-		else if (streak < STREAK5x)
-			return 4;
-		else
-			return 5;
+	public void calculateMultiplier ( int streak) {
+		if (streak < STREAK2x)		multiplier = 1;
+		else if (streak < STREAK3x) multiplier = 2;
+		else if (streak < STREAK4x) multiplier = 3;
+		else if (streak < STREAK5x)	multiplier = 4;
+		else						multiplier = 5;
 	}
 
+	public int getMultiplier () {
+		return multiplier;
+	}
 	public  int getDelta (int points, int streak) {
-		return points * getMultiplier (streak);
+		calculateMultiplier (streak);
+		return points * multiplier;
+	}
+
+	void nonMissInput (int quality)	{
+		animationQuality = quality;
+		missAnim = 1;
+		streak++;
 	}
 	
 	public void determineAnimation(int score, int direction){
 		if (score < POOR_MIN_THRESHOLD) {
+			animationQuality = MISS;
 			missAnim = -1;
 			streak = 0;
+		} else if (score < OKAY_MIN_THRESHOLD) {
+			nonMissInput (POOR);
+		} else if (score < GREAT_MIN_THRESHOLD) {
+			nonMissInput (OKAY);
+		} else if (score < AMAZING_MIN_THRESHOLD) {
+			nonMissInput (GREAT);
 		} else {
-			missAnim = 1;
-			streak++;
+			nonMissInput (AMAZING);
 		}
 
 		transitionInt = direction * missAnim;
@@ -84,7 +105,7 @@ public class TwerkAnim : MonoBehaviour {
 		animTimer = 0;
 		
 		GameManager.Instance.UpdateScore (getDelta(score, streak));
-		Debug.Log ("Multiplier: " + getMultiplier(streak).ToString (), gameObject);
+		Debug.Log ("Multiplier: " + multiplier.ToString (), gameObject);
 		Debug.Log ("Score: " + ScoreManager.score.ToString (), gameObject);
 	}
 }
