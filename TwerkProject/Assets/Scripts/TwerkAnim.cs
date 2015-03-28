@@ -5,20 +5,17 @@ public class TwerkAnim : MonoBehaviour {
 
 	/* TwerkAnim class will be used to determine which Twerk animation to perform
 	 * -1 - Idle
-	 *  1 - Miss
-	 *  2 - Poor
-	 *  3 - Great
-	 *  4 - Perfect
+	 *  1 - UP
+	 *  2 - RIGHT
+	 *  3 - DOWN
+	 *  4 - LEFT
 	 */
 	
 	int POOR_MIN_THRESHOLD = 10;
 	int GREAT_MIN_THRESHOLD = 50;
 	int AMAZING_MIN_THRESHOLD = 80;
 
-	int MISS_TRANSITION = 1;
-	int POOR_TRANSITION = 2;
-	int GREAT_TRANSITION = 3;
-	int AMAZING_TRANSITION = 4;
+	int missAnim = 1;
 
 	int STREAK2x = 10;
 	int STREAK3x = 20;	
@@ -28,7 +25,7 @@ public class TwerkAnim : MonoBehaviour {
 
 	Animator animator;
 
-	int transitionInt = -1;
+	int transitionInt = 0;
 	int streak = 0;
 	float animTimer;
 
@@ -44,13 +41,13 @@ public class TwerkAnim : MonoBehaviour {
 		animTimer += Time.deltaTime;
 
 		if (animTimer > 2.1f && transitionInt >= 0) {
-			transitionInt = -1;
+			transitionInt = 0;
 			animator.SetInteger ("transitionInt", transitionInt);
 		}
 	}
 
 	public void determineRandomAnimation(){
-		determineAnimation (Random.Range (1, 100));
+		determineAnimation (Random.Range (1, 100), Random.Range (1,4));
 	}	
 
 	public int getMultiplier ( int streak) {
@@ -70,20 +67,16 @@ public class TwerkAnim : MonoBehaviour {
 		return points * getMultiplier (streak);
 	}
 	
-	public void determineAnimation(int score){
-		if (score < POOR_MIN_THRESHOLD) {
+	public void determineAnimation(int score, int direction){
+		if (score < AMAZING_MIN_THRESHOLD) {
+			missAnim = -1;
 			streak = 0;
-			transitionInt = MISS_TRANSITION;
-		} else if (score < GREAT_MIN_THRESHOLD) {
-			streak++;
-			transitionInt = POOR_TRANSITION;
-		} else if (score < AMAZING_MIN_THRESHOLD) {
-			streak++;
-			transitionInt = GREAT_TRANSITION;
 		} else {
+			missAnim = 1;
 			streak++;
-			transitionInt = AMAZING_TRANSITION;
 		}
+
+		transitionInt = direction * missAnim;
 
 		Debug.Log ("Transition: " + transitionInt.ToString (), gameObject);
 		Debug.Log ("Streak: " + streak.ToString (), gameObject);
