@@ -100,6 +100,7 @@ GameObject:
   - 23: {fileID: 613257793}
   - 114: {fileID: 613257798}
   - 95: {fileID: 613257797}
+  - 114: {fileID: 613257799}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -174,7 +175,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 943239202}
   m_GameObject: {fileID: 613257792}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 22b2a17c0bcc9224abf181cfb012064b, type: 2}
   m_CullingMode: 0
@@ -196,6 +197,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e9e2500b5f043488e82871427dfe83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &613257799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613257792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c77498ba54f3645be056a54c3230de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drainInterval: 3
+  drainAmount: 4
+  hasNewScore: 1
+  scoreDelta: 5
 --- !u!1 &881955568
 GameObject:
   m_ObjectHideFlags: 0
