@@ -191,6 +191,7 @@ MonoBehaviour:
   drainAmount: 12
   hasNewScore: 1
   scoreDelta: 15
+  sceneToLoad: 
 --- !u!4 &398885267
 Transform:
   m_ObjectHideFlags: 0
@@ -622,6 +623,7 @@ GameObject:
   - 224: {fileID: 1793271445}
   - 222: {fileID: 1793271447}
   - 114: {fileID: 1793271446}
+  - 114: {fileID: 1793271448}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Untagged
@@ -671,13 +673,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Time Remaining: 60'
+  m_Text: 'Time Remaining: 90'
 --- !u!222 &1793271447
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793271444}
+--- !u!114 &1793271448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793271444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45841cba9ba80b428c21ef55659d45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCountdownTime: 10
 --- !u!1 &2053996071
 GameObject:
   m_ObjectHideFlags: 0

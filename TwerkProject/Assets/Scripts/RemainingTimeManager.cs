@@ -5,24 +5,29 @@ using System.Collections;
 public class RemainingTimeManager : MonoBehaviour
 {
 	private Text text;
-	private float startTime = 0.0f;
-	private float countDownSeconds = 0.0f;
+	private float deltaTime = 0.0f;
+	private int countDownSeconds = 0;
 	
-	public float startCountdownTime = 90.0f;
+	public int startCountdownTime = 90;
 	
 	void Awake ()
 	{
 		text = GetComponent <Text> ();
-		startTime = Time.time;
+		deltaTime = Time.time;
 		countDownSeconds = startCountdownTime;
 	}
 	
 	void Update ()
 	{
 		// Change the remaining time
-		if (Time.time - startTime >= 1) {
-			startTime = Time.time;
+		if (Time.time - deltaTime >= 1.0f) {
+			deltaTime = Time.time;
 			countDownSeconds--;
+		}
+
+		// If the game is over
+		if (countDownSeconds <= 0) {
+			GameManager.Instance.EndGame();
 		}
 
 		text.text = "Time Remaining: " + countDownSeconds;

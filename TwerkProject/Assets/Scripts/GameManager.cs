@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 	public int drainAmount = 12;
 	public bool hasNewScore = true;
 	public int scoreDelta = 15;
+	public string sceneToLoad;
 
 	private float lastDrainTime = 0.0f;
 
@@ -49,5 +50,14 @@ public class GameManager : MonoBehaviour {
 	public void UpdateScore(int delta){
 		ScoreManager.score += delta;
 		MeterManager.fill += delta;
+	}
+
+	public void EndGame(){
+		if (!string.IsNullOrEmpty (sceneToLoad)) {
+			print ("Load Scene: " + sceneToLoad);
+			Application.LoadLevel (sceneToLoad);
+		} else {
+			print ("No scene to load");
+		}
 	}
 }
