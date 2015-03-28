@@ -191,7 +191,7 @@ MonoBehaviour:
   drainAmount: 12
   hasNewScore: 1
   scoreDelta: 15
-  sceneToLoad: 
+  sceneToLoad: credits
 --- !u!4 &398885267
 Transform:
   m_ObjectHideFlags: 0
