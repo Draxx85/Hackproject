@@ -32,10 +32,9 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// Update the score and meter
+		// For manual update of the score and meter only
 		if (hasNewScore) {
-			ScoreManager.score += scoreDelta;
-			MeterManager.fill += scoreDelta;
+			UpdateScore(scoreDelta);
 		}
 
 		// Drain the meter over time
@@ -48,7 +47,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void UpdateScore(int delta){
-		hasNewScore = true;
-		scoreDelta = delta;
+		ScoreManager.score += delta;
+		MeterManager.fill += delta;
 	}
 }
