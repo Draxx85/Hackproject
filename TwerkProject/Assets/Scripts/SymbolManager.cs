@@ -6,20 +6,11 @@ public class SymbolManager : MonoBehaviour {
 	public Vector3 spawnValues;
 	public float spawnWait;
 	public float startWait;
+	public float fallSpeed;
 
-	void Start ()
-	{
-		DropSymbol();
-	}
-	
-	IEnumerator DropSymbol ()
-	{
-		yield return new WaitForSeconds (startWait);
-		while (true)
-		{
-			Vector3 spawnPosition = new Vector3(spawnValues.x, spawnValues.y, spawnValues.z);
-			//Instantiate (symbol, spawnPosition);
-			yield return new WaitForSeconds (spawnWait);
-		}
+	void Update() {
+
+		transform.Translate(spawnValues.x, spawnValues.y - fallSpeed, spawnValues.z);
+
 	}
 }
