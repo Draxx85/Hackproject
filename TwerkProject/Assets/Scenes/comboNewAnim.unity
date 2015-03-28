@@ -191,6 +191,7 @@ MonoBehaviour:
   drainAmount: 12
   hasNewScore: 1
   scoreDelta: 15
+  sceneToLoad: 
 --- !u!4 &398885267
 Transform:
   m_ObjectHideFlags: 0
@@ -629,6 +630,7 @@ MonoBehaviour:
   drainAmount: 4
   hasNewScore: 1
   scoreDelta: 5
+  sceneToLoad: 
 --- !u!95 &1859026461
 Animator:
   serializedVersion: 3

@@ -43,7 +43,7 @@ public class TwerkAnim : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		animTimer = 0;
 		//this will be removed and determineAnimation will be called by Jeremy's function that finds the accuracy of a move
-		//InvokeRepeating("determineRandomAnimation", 0.0f, 4.0f);
+		InvokeRepeating("determineRandomAnimation", 0.0f, 4.0f);
 	}
 
 	void Update() {
@@ -51,6 +51,7 @@ public class TwerkAnim : MonoBehaviour {
 
 		if (animTimer > 2.1f && transitionInt != 0) {
 			transitionInt = 0;
+			animTimer = 0;
 			animator.SetInteger ("transitionInt", transitionInt);
 		}
 	}
