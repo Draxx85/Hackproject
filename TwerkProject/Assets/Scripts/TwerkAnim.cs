@@ -40,7 +40,7 @@ public class TwerkAnim : MonoBehaviour {
 	void Update() {
 		animTimer += Time.deltaTime;
 
-		if (animTimer > 2.1f && transitionInt >= 0) {
+		if (animTimer > 2.1f && transitionInt != 0) {
 			transitionInt = 0;
 			animator.SetInteger ("transitionInt", transitionInt);
 		}
@@ -68,7 +68,7 @@ public class TwerkAnim : MonoBehaviour {
 	}
 	
 	public void determineAnimation(int score, int direction){
-		if (score < AMAZING_MIN_THRESHOLD) {
+		if (score < POOR_MIN_THRESHOLD) {
 			missAnim = -1;
 			streak = 0;
 		} else {
