@@ -7,6 +7,6 @@ public class GarbageCollection : MonoBehaviour {
 	
 	void Start ()
 	{
-		Destroy (gameObject, lifetime);
+		//Destroy (gameObject, lifetime);
 	}
 }

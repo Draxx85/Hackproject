@@ -15,23 +15,14 @@ public class Symbol : MonoBehaviour {
 	public Sprite rightSprite;
 	public Sprite upSprite;
 	public Sprite downSprite;
+	private static Vector3 startLocation = Vector3.zero;
 	
 	public int direction = 0;
-	
-	// Singleton
-	public static Symbol Instance {
-		get {
-			return instance;
-		}
-	}
-	private static Symbol instance;
-	void Awake( ) {
-		if (instance == null) {
-			instance = this;
-		}
-	}
 
 	void Start() {
+		if (startLocation == Vector3.zero) {
+			startLocation = MainSymbol.transform.position;
+		}
 		StartCoroutine (makeSymbol ());
 		myRenderer = MainSymbol.GetComponent<SpriteRenderer>();
 
@@ -64,13 +55,14 @@ public class Symbol : MonoBehaviour {
 		yield return new WaitForSeconds (startWait);
 		while (true)
 		{
-			Vector3 spawnPosition = new Vector3 (9.1f, 7, 0);
+			//Vector3 spawnPosition = new Vector3 (9.1f, 7, 0);
+			Vector3 spawnPosition = startLocation;
 			Instantiate (MainSymbol, spawnPosition, Quaternion.identity);
 
 			if(SymbolManager.Instance.mainSymbolList.Count > 10){
-				SymbolManager.Instance.mainSymbolList.Dequeue ();
-				//GameObject temp = SymbolManager.Instance.symbolList.Dequeue () as GameObject;
-				//Destroy (gameObject, lifetime);
+				//SymbolManager.Instance.mainSymbolList.Dequeue ();
+				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;
+				Destroy (temp, 1);
 			}
 
 			yield return new WaitForSeconds (spawnWait);
