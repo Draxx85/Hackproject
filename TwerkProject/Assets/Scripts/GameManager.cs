@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour {
 	public string sceneToLoad;
 	public bool matchStarted;
 
-	public GameObject mainSymbolStartLocation;
 	public GameObject mainSymbol;
 
 	// Use this for initialization
