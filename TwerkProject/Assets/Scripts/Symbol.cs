@@ -55,15 +55,13 @@ public class Symbol : MonoBehaviour {
 		yield return new WaitForSeconds (startWait);
 		while (true)
 		{
-			//Vector3 spawnPosition = new Vector3 (9.1f, 7, 0);
 			Vector3 spawnPosition = startLocation;
 			Instantiate (MainSymbol, spawnPosition, Quaternion.identity);
 
-			if(SymbolManager.Instance.mainSymbolList.Count > 10){
-				//SymbolManager.Instance.mainSymbolList.Dequeue ();
-				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;
-				Destroy (temp, 1);
-			}
+//			if(SymbolManager.Instance.mainSymbolList.Count > 10){
+//				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;
+//				Destroy (temp, 1);
+//			}
 
 			yield return new WaitForSeconds (spawnWait);
 		}
@@ -71,9 +69,5 @@ public class Symbol : MonoBehaviour {
 
 	void Update() {
 		transform.Translate(spawnValues.x, spawnValues.y - fallSpeed, spawnValues.z);
-	}
-
-	public GameObject peek (){
-		return SymbolManager.Instance.mainSymbolList.Peek () as GameObject;
 	}
 }
