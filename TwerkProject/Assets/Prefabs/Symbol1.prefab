@@ -11,14 +11,13 @@ GameObject:
   - 33: {fileID: 3388160}
   - 136: {fileID: 13612714}
   - 23: {fileID: 2364852}
-  - 114: {fileID: 11455724}
   m_Layer: 0
   m_Name: Symbol1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &482372
 Transform:
   m_ObjectHideFlags: 1
