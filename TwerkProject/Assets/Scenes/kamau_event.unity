@@ -437,6 +437,8 @@ MonoBehaviour:
   scoreDelta: 15
   sceneToLoad: credits
   matchStarted: 0
+  mainSymbolStartLocation: {fileID: 0}
+  mainSymbol: {fileID: 0}
 --- !u!4 &398885267
 Transform:
   m_ObjectHideFlags: 0
@@ -460,7 +462,7 @@ GameObject:
   - 222: {fileID: 434835140}
   - 114: {fileID: 434835139}
   m_Layer: 5
-  m_Name: Panel 1
+  m_Name: ExplosionContainerR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1315,7 +1317,7 @@ GameObject:
   - 222: {fileID: 2146879177}
   - 114: {fileID: 2146879176}
   m_Layer: 5
-  m_Name: ExplosionContainer
+  m_Name: ExplosionContainerL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
