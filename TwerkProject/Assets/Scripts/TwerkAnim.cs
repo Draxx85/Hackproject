@@ -11,10 +11,10 @@ public class TwerkAnim : MonoBehaviour {
 	 *  4 - LEFT
 	 */
 	
-	int POOR_MIN_THRESHOLD = 10;
-	int OKAY_MIN_THRESHOLD = 40;
-	int GREAT_MIN_THRESHOLD = 60;
-	int AMAZING_MIN_THRESHOLD = 80;
+	public const int POOR_MIN_THRESHOLD = 10;
+	public const int OKAY_MIN_THRESHOLD = 40;
+	public const int GREAT_MIN_THRESHOLD = 60;
+	public const int AMAZING_MIN_THRESHOLD = 80;
 
 	private const int MISS= 1;
 	private const int POOR= 2;
