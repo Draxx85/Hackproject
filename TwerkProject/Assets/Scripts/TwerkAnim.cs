@@ -40,6 +40,20 @@ public class TwerkAnim : MonoBehaviour {
 	int streak = 0;
 	float animTimer;
 
+	
+	// Singleton
+	public static TwerkAnim Instance {
+		get {
+			return instance;
+		}
+	}
+	private static TwerkAnim instance;
+	void Awake( ) {
+		if (instance == null) {
+			instance = this;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();

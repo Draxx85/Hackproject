@@ -17,6 +17,19 @@ public class Symbol : MonoBehaviour {
 	public Sprite downSprite;
 	
 	public int direction = 0;
+	
+	// Singleton
+	public static Symbol Instance {
+		get {
+			return instance;
+		}
+	}
+	private static Symbol instance;
+	void Awake( ) {
+		if (instance == null) {
+			instance = this;
+		}
+	}
 
 	void Start() {
 		StartCoroutine (makeSymbol ());
