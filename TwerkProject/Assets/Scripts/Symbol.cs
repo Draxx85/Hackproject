@@ -44,7 +44,6 @@ public class Symbol : MonoBehaviour {
 		}
 
 		symbolList.Enqueue (MainSymbol);
-		Debug.Log ("A:" + symbolList.Count);
 	}
 	
 	IEnumerator makeSymbol ()
@@ -63,9 +62,7 @@ public class Symbol : MonoBehaviour {
 	}
 
 	public void dequeue (){
-		Debug.Log ("D:" + symbolList.Count);
 		symbolList.Dequeue ();
-		Debug.Log ("E:" + symbolList.Count);
 	}
 
 	public GameObject peek (){

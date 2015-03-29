@@ -8,23 +8,24 @@ public class PlayerController : MonoBehaviour
 	public static int RIGHT_TRANSITION = 2;
 	public static int DOWN_TRANSITION = 3;
 	public static int LEFT_TRANSITION = 4;
+	public EvaluateMove evaluateMove = new EvaluateMove();
 
 	void Update ()
 	{
 		if (Input.GetButtonDown ("Up")) {
-			EvaluateMove.userInputKey(UP_TRANSITION);
+			evaluateMove.userInputKey(UP_TRANSITION);
 			Debug.Log ("UP was pressed", gameObject);
 		}
 		if (Input.GetButtonDown ("Right")) {
-			EvaluateMove.userInputKey(RIGHT_TRANSITION);
+			evaluateMove.userInputKey(RIGHT_TRANSITION);
 			Debug.Log ("RIGHT was pressed", gameObject);
 		}
 		if (Input.GetButtonDown ("Down")) {
-			EvaluateMove.userInputKey(DOWN_TRANSITION);
+			evaluateMove.userInputKey(DOWN_TRANSITION);
 			Debug.Log ("DOWN was pressed", gameObject);
 		}		
 		if (Input.GetButtonDown ("Left")) {
-			EvaluateMove.userInputKey(LEFT_TRANSITION);
+			evaluateMove.userInputKey(LEFT_TRANSITION);
 			Debug.Log ("LEFT was pressed", gameObject);
 		}
 	}
