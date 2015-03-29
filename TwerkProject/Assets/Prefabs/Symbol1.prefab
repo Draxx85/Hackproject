@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2364852}
   - 114: {fileID: 11455724}
   m_Layer: 0
-  m_Name: MainSymbol
+  m_Name: Symbol1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438cfa5a4d3a543b2b729bc0a9ccb0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  symbol: {fileID: 0}
+  Symbol: {fileID: 0}
   spawnValues: {x: 0, y: 0, z: 0}
   spawnWait: 5
   startWait: 1
