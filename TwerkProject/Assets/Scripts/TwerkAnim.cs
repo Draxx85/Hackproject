@@ -33,6 +33,7 @@ public class TwerkAnim : MonoBehaviour {
 
 
 	Animator animator;
+	QualityTrigger qualTrig = new QualityTrigger();
 
 	int transitionInt = 0;
 	int streak = 0;
@@ -102,6 +103,8 @@ public class TwerkAnim : MonoBehaviour {
 		Debug.Log ("Transition: " + transitionInt.ToString (), gameObject);
 		Debug.Log ("Streak: " + streak.ToString (), gameObject);
 		animator.SetInteger ("transitionInt", transitionInt);
+		qualTrig.showQuality (animationQuality);
+
 		animTimer = 0;
 		
 		GameManager.Instance.UpdateScore (getDelta(score, streak));
