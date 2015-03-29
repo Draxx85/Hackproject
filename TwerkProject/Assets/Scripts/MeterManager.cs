@@ -16,7 +16,6 @@ public class MeterManager : MonoBehaviour
 
 	public int startValue = 15;
 	public Image fillImage;
-	//public GameObject meterExplosion;
 	
 	void Awake ()
 	{
@@ -47,7 +46,6 @@ public class MeterManager : MonoBehaviour
 
 	void ResetMeter(){
 		fill = startValue;
-		//Instantiate(meterExplosion, slider.transform.position, slider.transform.rotation);
 		Debug.Log ("Meter filled. Resetting the meter");
 	}
 }
