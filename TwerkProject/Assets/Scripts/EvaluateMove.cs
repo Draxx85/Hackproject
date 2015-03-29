@@ -25,7 +25,7 @@ public class EvaluateMove : MonoBehaviour {
 	}
 
 	public void userInputKey (int direction) {
-		GameObject otherSymbol = SymbolManager.Instance.symbolList.Peek () as GameObject;
+		GameObject otherSymbol = SymbolManager.Instance.mainSymbolList.Peek () as GameObject;
 
 		int symbolDirection = 0;
 

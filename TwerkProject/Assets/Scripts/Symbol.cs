@@ -55,8 +55,8 @@ public class Symbol : MonoBehaviour {
 			break;
 		}
 
-		SymbolManager.Instance.symbolList.Enqueue (MainSymbol);
-		Debug.Log (SymbolManager.Instance.symbolList.Count);
+		SymbolManager.Instance.mainSymbolList.Enqueue (MainSymbol);
+		Debug.Log (SymbolManager.Instance.mainSymbolList.Count);
 	}
 	
 	IEnumerator makeSymbol ()
@@ -67,8 +67,8 @@ public class Symbol : MonoBehaviour {
 			Vector3 spawnPosition = new Vector3 (9.1f, 7, 0);
 			Instantiate (MainSymbol, spawnPosition, Quaternion.identity);
 
-			if(SymbolManager.Instance.symbolList.Count > 10){
-				SymbolManager.Instance.symbolList.Dequeue ();
+			if(SymbolManager.Instance.mainSymbolList.Count > 10){
+				SymbolManager.Instance.mainSymbolList.Dequeue ();
 				//GameObject temp = SymbolManager.Instance.symbolList.Dequeue () as GameObject;
 				//Destroy (gameObject, lifetime);
 			}
@@ -82,6 +82,6 @@ public class Symbol : MonoBehaviour {
 	}
 
 	public GameObject peek (){
-		return SymbolManager.Instance.symbolList.Peek () as GameObject;
+		return SymbolManager.Instance.mainSymbolList.Peek () as GameObject;
 	}
 }

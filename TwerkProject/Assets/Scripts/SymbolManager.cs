@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class SymbolManager : MonoBehaviour {
-	public Queue symbolList = new Queue();
+	public Queue mainSymbolList = new Queue();
 	
 	// Singleton
 	public static SymbolManager Instance {
