@@ -19,6 +19,5 @@ public class SymbolManager : MonoBehaviour {
 
 	void Start(){
 		mainSymbolList = Queue.Synchronized( mainSymbolList );
-		Debug.Log("WTF!!!!");
 	}
 }

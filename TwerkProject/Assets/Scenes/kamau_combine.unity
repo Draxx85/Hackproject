@@ -2125,6 +2125,7 @@ MonoBehaviour:
   scoreDelta: 15
   sceneToLoad: credits
   matchStarted: 0
+  symbolFallSpeed: 3
   mainSymbol: {fileID: 187958, guid: f21e4ce413a664fe4af453c210eadb83, type: 2}
 --- !u!4 &2092842766
 Transform:

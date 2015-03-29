@@ -27,7 +27,6 @@ public class EvaluateMove : MonoBehaviour
 	
 	public void Start ()
 	{
-		//mySymbol = GetComponent<GameObject> ();
 	}
 
 	public void userInputKey (int direction)
@@ -51,8 +50,6 @@ public class EvaluateMove : MonoBehaviour
 				}
 			
 				Debug.Log ("symbol direction: " + symbolDirection);
-				Debug.Log ("Symbol Height: " + otherSymbol.transform.position.y);
-				Debug.Log ("Target Height: " + targetRange);
 				Debug.Log ("Score: " + Mathf.Abs ((int)otherSymbol.transform.position.y - targetRange));
 				if (direction == symbolDirection) {
 					determineScore ((int)otherSymbol.transform.position.y, symbolDirection);
@@ -60,15 +57,8 @@ public class EvaluateMove : MonoBehaviour
 					TwerkAnim.Instance.determineAnimation (0, symbolDirection);
 				}
 
-				Debug.Log ("deque object " + otherSymbol.name);
-				Debug.Log ("EvaluateMove::userInputKey() - symbol count: " + SymbolManager.Instance.mainSymbolList.Count);
-
 				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;
 				if (temp != null) {
-					Debug.Log ("destroy object " + temp.name);
-					if (otherSymbol.name.CompareTo (temp.name) != 0) {
-						Debug.Log ("WTF!");
-					}
 					Destroy (temp);
 				}
 			}

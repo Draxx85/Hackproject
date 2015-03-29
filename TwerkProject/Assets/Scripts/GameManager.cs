@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
 	public int scoreDelta = 15;
 	public string sceneToLoad;
 	public bool matchStarted;
+	public float symbolFallSpeed = 0.0f;
 
 	public GameObject mainSymbol;
 
@@ -37,9 +38,7 @@ public class GameManager : MonoBehaviour {
 		lastDrainTime = Time.time;
 		matchStarted = false;
 
-		//startLocation = mainSymbolStartLocation.transform.position;
 		startLocation = new Vector3(954,683,0);
-		//startLocation = mainSymbolStartLocation.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -56,10 +55,9 @@ public class GameManager : MonoBehaviour {
 				MeterManager.fill -= drainAmount;
 			}
 			
-			if (Time.time - lastSpawnTime > Symbol.fallSpeedStatic) {
+			if (Time.time - lastSpawnTime > symbolFallSpeed) {
 				lastSpawnTime = Time.time;
-				//Symbol.makeSymbol2(startLocation);
-				makeSymbol3();
+				SpawnNewSymbol();
 			}
 		}
 
@@ -88,7 +86,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	
-	public void makeSymbol3 ()
+	public void SpawnNewSymbol ()
 	{
 		Vector3 spawnPosition = startLocation;
 		Instantiate (mainSymbol, spawnPosition, Quaternion.identity);
