@@ -62,7 +62,7 @@ public class TwerkAnim : MonoBehaviour {
 		//qualAnimator =  Canvas.GetComponent<Animator> ();
 		animTimer = 0;
 		//this will be removed and determineAnimation will be called by Jeremy's function that finds the accuracy of a move
-		InvokeRepeating("determineRandomAnimation", 0.0f, 4.0f);
+		//InvokeRepeating("determineRandomAnimation", 0.0f, 4.0f);
 	}
 
 	void Update() {
