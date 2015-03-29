@@ -18,8 +18,6 @@ public class Symbol : MonoBehaviour {
 	
 	public int direction = 0;
 
-	public SymbolManager symbolManager = new SymbolManager();
-	
 	void Start() {
 		StartCoroutine (makeSymbol ());
 		myRenderer = MainSymbol.GetComponent<SpriteRenderer>();
@@ -44,8 +42,8 @@ public class Symbol : MonoBehaviour {
 			break;
 		}
 
-		symbolManager.symbolList.Enqueue (MainSymbol);
-		Debug.Log (symbolManager.symbolList.Count);
+		SymbolManager.Instance.symbolList.Enqueue (MainSymbol);
+		Debug.Log (SymbolManager.Instance.symbolList.Count);
 	}
 	
 	IEnumerator makeSymbol ()
@@ -55,6 +53,13 @@ public class Symbol : MonoBehaviour {
 		{
 			Vector3 spawnPosition = new Vector3 (9.1f, 7, 0);
 			Instantiate (MainSymbol, spawnPosition, Quaternion.identity);
+
+			if(SymbolManager.Instance.symbolList.Count > 10){
+				SymbolManager.Instance.symbolList.Dequeue ();
+				//GameObject temp = SymbolManager.Instance.symbolList.Dequeue () as GameObject;
+				//Destroy (gameObject, lifetime);
+			}
+
 			yield return new WaitForSeconds (spawnWait);
 		}
 	}
@@ -63,11 +68,7 @@ public class Symbol : MonoBehaviour {
 		transform.Translate(spawnValues.x, spawnValues.y - fallSpeed, spawnValues.z);
 	}
 
-	public void dequeue (){
-		symbolManager.symbolList.Dequeue ();
-	}
-
 	public GameObject peek (){
-		return symbolManager.symbolList.Peek () as GameObject;
+		return SymbolManager.Instance.symbolList.Peek () as GameObject;
 	}
 }
