@@ -14,6 +14,7 @@ public class SymbolManager : MonoBehaviour {
 	void Awake( ) {
 		if (instance == null) {
 			instance = this;
+			mainSymbolList = Queue.Synchronized( mainSymbolList );
 		}
 	}
 }

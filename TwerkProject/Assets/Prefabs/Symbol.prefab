@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnValues: {x: 0, y: 0, z: 0}
-  spawnWait: 30
+  spawnWait: 10
   startWait: 1
-  fallSpeed: 5
+  fallSpeed: 3
   leftSprite: {fileID: 21300000, guid: 1a6d8c0fe46ef49938365954ae0a2dfe, type: 3}
   rightSprite: {fileID: 21300000, guid: 4af42b6600a624205b8860f63311b9b7, type: 3}
   upSprite: {fileID: 21300000, guid: 775fa5472c051458bbae91341300ac50, type: 3}

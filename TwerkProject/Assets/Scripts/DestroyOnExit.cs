@@ -9,16 +9,19 @@ public class DestroyOnExit : MonoBehaviour
 
 	void Update ()
 	{
-		if (gameObject.transform.position.y < 0) {
-			Debug.Log ("deque object " + gameObject.name);
-			GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;			
-			if (temp != null) {
-				Debug.Log ("destroy object " + temp.name);
-				if (gameObject.name.CompareTo (temp.name) != 0) {
-					Debug.Log ("WTF!");
+		if (SymbolManager.Instance.mainSymbolList.Count > 0) {
+			if (gameObject.transform.position.y < 0) {
+				Debug.Log ("deque object " + gameObject.name);
+
+				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;			
+				if (temp != null) {
+					Debug.Log ("destroy object " + temp.name);
+					if (gameObject.name.CompareTo (temp.name) != 0) {
+						Debug.Log ("WTF!");
+					}
 				}
+				Destroy (gameObject);
 			}
-			Destroy (gameObject);
 		}
 	}
 }
