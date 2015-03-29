@@ -61,14 +61,16 @@ public class EvaluateMove : MonoBehaviour
 				}
 
 				Debug.Log ("deque object " + otherSymbol.name);
+				Debug.Log ("EvaluateMove::userInputKey() - symbol count: " + SymbolManager.Instance.mainSymbolList.Count);
+
 				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;
 				if (temp != null) {
 					Debug.Log ("destroy object " + temp.name);
 					if (otherSymbol.name.CompareTo (temp.name) != 0) {
 						Debug.Log ("WTF!");
 					}
+					Destroy (temp);
 				}
-				Destroy (otherSymbol);
 			}
 		}
 	}

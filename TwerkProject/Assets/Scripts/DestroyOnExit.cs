@@ -12,6 +12,7 @@ public class DestroyOnExit : MonoBehaviour
 		if (SymbolManager.Instance.mainSymbolList.Count > 0) {
 			if (gameObject.transform.position.y < 0) {
 				Debug.Log ("deque object " + gameObject.name);
+				Debug.Log ("DestroyOnExit::Update() - symbol count: " + SymbolManager.Instance.mainSymbolList.Count);
 
 				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;			
 				if (temp != null) {
@@ -19,8 +20,8 @@ public class DestroyOnExit : MonoBehaviour
 					if (gameObject.name.CompareTo (temp.name) != 0) {
 						Debug.Log ("WTF!");
 					}
+					Destroy (temp);
 				}
-				Destroy (gameObject);
 			}
 		}
 	}
