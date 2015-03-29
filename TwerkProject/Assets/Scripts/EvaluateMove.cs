@@ -19,7 +19,6 @@ public class EvaluateMove : MonoBehaviour {
 		}
 	}
 	
-	public GameObject mySymbol;
 	public void Start() {
 		//mySymbol = GetComponent<GameObject> ();
 	}
@@ -30,22 +29,18 @@ public class EvaluateMove : MonoBehaviour {
 		int symbolDirection = 0;
 
 		SpriteRenderer otherRenderer = otherSymbol.GetComponent<SpriteRenderer>();
-		SpriteRenderer myRenderer = mySymbol.GetComponent<SpriteRenderer> ();
 
-		/*if (otherRenderer.sprite == Symbol.upSprite){
+		if (otherRenderer.sprite.name == "arrowUp"){
 			symbolDirection = 1;
 		}
-		else if (otherRenderer.sprite == .rightSprite){
+		else if (otherRenderer.sprite.name == "arrowRight"){
 			symbolDirection = 2;
 		}
-		else if (otherRenderer.sprite == Symbol.downSprite){
+		else if (otherRenderer.sprite.name == "arrowDown"){
 			symbolDirection = 3;
 		}
-		else if (otherRenderer.sprite == (SymbolManager.Instance.symbolList.Peek () as Symbol).leftSprite){
+		else if (otherRenderer.sprite.name == "arrowLeft"){
 			symbolDirection = 4;
-		}*/
-		if (otherRenderer.sprite == myRenderer.sprite) {
-
 		}
 
 		if (direction == symbolDirection) {
