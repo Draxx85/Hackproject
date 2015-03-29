@@ -5,7 +5,7 @@ public class EvaluateMove : MonoBehaviour
 {
 
 	// We should pull this targetRange from hitbox
-	const int targetRange = -160;
+	const int targetRange = 120;
 	const int validRange = 100;
 	const int MAX_SCORE = 100;
 
