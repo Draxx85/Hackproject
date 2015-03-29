@@ -724,9 +724,7 @@ RectTransform:
   - {fileID: 1426252176}
   - {fileID: 2053996072}
   - {fileID: 1793271445}
-  - {fileID: 1008866254}
-  - {fileID: 2043426408}
-  - {fileID: 1357488726}
+  - {fileID: 1599853122}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -1055,11 +1053,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 506012900}
-  m_RootOrder: 3
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 429, y: -120}
+  m_Father: {fileID: 1599853122}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 1, y: .5}
+  m_AnchorMax: {x: 1, y: .5}
+  m_AnchoredPosition: {x: -112.5, y: -116}
   m_SizeDelta: {x: 130, y: 80}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1008866255
@@ -1148,8 +1146,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 506012900}
-  m_RootOrder: 5
+  m_Father: {fileID: 1599853122}
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 490, y: 0}
@@ -1399,6 +1397,41 @@ Transform:
   - {fileID: 280181469}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &1599853121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1599853122}
+  m_Layer: 1
+  m_Name: HitBoxContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1599853122
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599853121}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1008866254}
+  - {fileID: 2043426408}
+  - {fileID: 1357488726}
+  m_Father: {fileID: 506012900}
+  m_RootOrder: 3
+  m_AnchorMin: {x: 1, y: .5}
+  m_AnchorMax: {x: 1, y: .5}
+  m_AnchoredPosition: {x: -542.5, y: 0}
+  m_SizeDelta: {x: 1085, y: 426}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &1739582508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,8 +1694,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 506012900}
-  m_RootOrder: 4
+  m_Father: {fileID: 1599853122}
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 360, y: 0}
