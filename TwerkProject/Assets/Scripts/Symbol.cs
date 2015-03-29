@@ -15,9 +15,10 @@ public class Symbol : MonoBehaviour {
 	public Sprite rightSprite;
 	public Sprite upSprite;
 	public Sprite downSprite;
-
-	public Queue symbolList = new Queue();
+	
 	public int direction = 0;
+
+	public SymbolManager symbolManager = new SymbolManager();
 	
 	void Start() {
 		StartCoroutine (makeSymbol ());
@@ -43,7 +44,8 @@ public class Symbol : MonoBehaviour {
 			break;
 		}
 
-		symbolList.Enqueue (MainSymbol);
+		symbolManager.symbolList.Enqueue (MainSymbol);
+		Debug.Log (symbolManager.symbolList.Count);
 	}
 	
 	IEnumerator makeSymbol ()
@@ -62,10 +64,10 @@ public class Symbol : MonoBehaviour {
 	}
 
 	public void dequeue (){
-		symbolList.Dequeue ();
+		symbolManager.symbolList.Dequeue ();
 	}
 
 	public GameObject peek (){
-		return symbolList.Peek () as GameObject;
+		return symbolManager.symbolList.Peek () as GameObject;
 	}
 }
