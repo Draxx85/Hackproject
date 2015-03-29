@@ -51,7 +51,7 @@ public class Symbol : MonoBehaviour {
 		}
 
 		SymbolManager.Instance.mainSymbolList.Enqueue (gameObject);
-		Debug.Log (SymbolManager.Instance.mainSymbolList.Count);
+		//Debug.Log (SymbolManager.Instance.mainSymbolList.Count);
 	}
 	
 	IEnumerator makeSymbol ()
