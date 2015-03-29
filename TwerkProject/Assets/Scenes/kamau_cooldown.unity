@@ -779,6 +779,7 @@ GameObject:
   - 224: {fileID: 1518329382}
   - 222: {fileID: 1518329384}
   - 114: {fileID: 1518329383}
+  - 95: {fileID: 1518329385}
   m_Layer: 5
   m_Name: RedOverlay
   m_TagString: Untagged
@@ -830,6 +831,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518329381}
+--- !u!95 &1518329385
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518329381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ac3f09bd4605744c845a36942357401, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1793271444
 GameObject:
   m_ObjectHideFlags: 0
