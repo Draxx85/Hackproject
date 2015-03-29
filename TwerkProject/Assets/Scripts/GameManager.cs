@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
 	public bool hasNewScore = true;
 	public int scoreDelta = 15;
 	public string sceneToLoad;
+	public bool matchStarted;
 
 	private float lastDrainTime = 0.0f;
 
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour {
 	{
 		ScoreManager.score = 1;
 		lastDrainTime = Time.time;
+		matchStarted = false;
 	}
 	
 	// Update is called once per frame
@@ -38,21 +40,31 @@ public class GameManager : MonoBehaviour {
 			UpdateScore(scoreDelta);
 		}
 
-		// Drain the meter over time
-		if (Time.time - lastDrainTime > drainInterval) {
-			lastDrainTime = Time.time;
-			MeterManager.fill -= drainAmount;
+		if (matchStarted) {
+			// Drain the meter over time
+			if (Time.time - lastDrainTime > drainInterval) {
+				lastDrainTime = Time.time;
+				MeterManager.fill -= drainAmount;
+			}
 		}
 
 		hasNewScore = false;
 	}
 
 	public void UpdateScore(int delta){
-		ScoreManager.score += delta;
-		MeterManager.fill += delta;
+		if (matchStarted) {
+			ScoreManager.score += delta;
+			MeterManager.fill += delta;
+		}
+	}
+	
+	public void StartGame(){
+		matchStarted = true;
 	}
 
-	public void EndGame(){
+	public void EndGame(){		
+		matchStarted = false;
+
 		if (!string.IsNullOrEmpty (sceneToLoad)) {
 			print ("Load Scene: " + sceneToLoad);
 			Application.LoadLevel (sceneToLoad);
