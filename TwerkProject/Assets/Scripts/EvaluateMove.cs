@@ -5,8 +5,11 @@ public class EvaluateMove : MonoBehaviour
 {
 
 	// We should pull this targetRange from hitbox
-	const int targetRange = 120;
-	const int validRange = 100;
+	int targetRange = 120;
+
+	bool isHeightSet = false;
+	public GameObject HitBox;
+	int validRange = 100;
 	const int MAX_SCORE = 100;
 
 	// Singleton
@@ -27,12 +30,21 @@ public class EvaluateMove : MonoBehaviour
 	
 	public void Start ()
 	{
+		targetRange = (int) HitBox.transform.position.y;
+		Debug.Log ("target: " +targetRange);
+		validRange = (int) (HitBox.transform.position.y - HitBox.transform.lossyScale.y/2);
+		Debug.Log ("range: " +targetRange);
 	}
 
 	public void userInputKey (int direction)
 	{
 		if (SymbolManager.Instance.mainSymbolList.Count > 0) {
 			GameObject otherSymbol = SymbolManager.Instance.mainSymbolList.Peek () as GameObject;
+
+			if (!isHeightSet) {
+				targetRange += (int) otherSymbol.transform.lossyScale.y/2;
+				isHeightSet = true;
+			}
 
 			int symbolDirection = 0;
 
@@ -49,8 +61,11 @@ public class EvaluateMove : MonoBehaviour
 					symbolDirection = PlayerController.LEFT_TRANSITION;
 				}
 			
-				Debug.Log ("symbol direction: " + symbolDirection);
-				Debug.Log ("Score: " + Mathf.Abs ((int)otherSymbol.transform.position.y - targetRange));
+				//Debug.Log ("symbol direction: " + symbolDirection);
+				//Debug.Log ("Score: " + Mathf.Abs ((int)otherSymbol.transform.position.y - targetRange));
+
+				
+				Debug.Log ("height: " +(int)otherSymbol.transform.position.y);
 				if (direction == symbolDirection) {
 					determineScore ((int)otherSymbol.transform.position.y, symbolDirection);
 				} else {
@@ -65,7 +80,7 @@ public class EvaluateMove : MonoBehaviour
 		}
 	}
 
-	static void determineScore (int height, int direction)
+	void determineScore (int height, int direction)
 	{
 		TwerkAnim.Instance.determineAnimation (Mathf.Max (MAX_SCORE - (Mathf.Abs (height - targetRange)), 0), direction);
 	}

@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22430468}
-  - 114: {fileID: 11496468}
   - 114: {fileID: 11474558}
   - 212: {fileID: 21293290}
   - 114: {fileID: 11499462}
+  - 114: {fileID: 11486634}
   m_Layer: 0
   m_Name: Symbol
   m_TagString: Untagged
@@ -39,7 +39,7 @@ MonoBehaviour:
   upSprite: {fileID: 21300000, guid: 775fa5472c051458bbae91341300ac50, type: 3}
   downSprite: {fileID: 21300000, guid: 7fa6c6aac75194d82af3abe87d8d04df, type: 3}
   direction: 0
---- !u!114 &11496468
+--- !u!114 &11486634
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2475276eaec57fb4ea88d9191319801a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitBox: {fileID: 196854, guid: e6114b1a83db0bc489be358d4260be77, type: 2}
 --- !u!114 &11499462
 MonoBehaviour:
   m_ObjectHideFlags: 1
