@@ -28,9 +28,11 @@ public class ExplosionManager : MonoBehaviour {
 		explosion = GetComponent<Animator> ();
 
 		if (type == AnimationType.AnimationType_TRIGGER) {
+			Debug.Log("triggering trigger " + triggerName);
 			explosion.SetTrigger (triggerName);
 		} 
 		if(type == AnimationType.AnimationType_BOOL) {
+			Debug.Log("triggering bool " + triggerName);
 			explosion.SetBool (triggerName, true);
 		}
 	}
