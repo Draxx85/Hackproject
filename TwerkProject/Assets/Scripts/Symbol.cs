@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Symbol : MonoBehaviour {
-	public GameObject MainSymbol;
+	//public GameObject MainSymbol;
 
 	public Vector3 spawnValues;
 	public float spawnWait;
@@ -15,16 +15,20 @@ public class Symbol : MonoBehaviour {
 	public Sprite rightSprite;
 	public Sprite upSprite;
 	public Sprite downSprite;
-	private static Vector3 startLocation = Vector3.zero;
 	
 	public int direction = 0;
 
+	public static float fallSpeedStatic = 0.0f;
+	private static GameObject MainSymbolStatic;
+
 	void Start() {
-		if (startLocation == Vector3.zero) {
-			startLocation = MainSymbol.transform.position;
+		if (MainSymbolStatic == null) {
+			MainSymbolStatic = gameObject;
+			fallSpeedStatic = fallSpeed;
 		}
-		StartCoroutine (makeSymbol ());
-		myRenderer = MainSymbol.GetComponent<SpriteRenderer>();
+		//StartCoroutine (makeSymbol ());
+		//myRenderer = MainSymbol.GetComponent<SpriteRenderer>();
+		myRenderer = gameObject.GetComponent<SpriteRenderer>();
 
 		switch(Random.Range (0,4) )
 		{
@@ -46,8 +50,8 @@ public class Symbol : MonoBehaviour {
 			break;
 		}
 
-		SymbolManager.Instance.mainSymbolList.Enqueue (MainSymbol);
-		Debug.Log (SymbolManager.Instance.mainSymbolList.Count);
+		SymbolManager.Instance.mainSymbolList.Enqueue (gameObject);
+		//Debug.Log (SymbolManager.Instance.mainSymbolList.Count);
 	}
 	
 	IEnumerator makeSymbol ()
@@ -55,8 +59,8 @@ public class Symbol : MonoBehaviour {
 		yield return new WaitForSeconds (startWait);
 		while (true)
 		{
-			Vector3 spawnPosition = startLocation;
-			Instantiate (MainSymbol, spawnPosition, Quaternion.identity);
+			//Vector3 spawnPosition = startLocation;
+			//Instantiate (MainSymbol, spawnPosition, Quaternion.identity);
 
 //			if(SymbolManager.Instance.mainSymbolList.Count > 10){
 //				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;
@@ -65,6 +69,13 @@ public class Symbol : MonoBehaviour {
 
 			yield return new WaitForSeconds (spawnWait);
 		}
+	}
+	
+	
+	public static void makeSymbol2 (Vector3 startLocation)
+	{
+		Vector3 spawnPosition = startLocation;
+		Instantiate (MainSymbolStatic, spawnPosition, Quaternion.identity);
 	}
 
 	void Update() {
