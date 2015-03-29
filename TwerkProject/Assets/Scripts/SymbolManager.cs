@@ -46,7 +46,7 @@ public class SymbolManager : MonoBehaviour {
 		yield return new WaitForSeconds (startWait);
 		while (true)
 		{
-			Vector3 spawnPosition = new Vector3 (300, 275, 0);
+			Vector3 spawnPosition = new Vector3 (-423, -211, 0);
 			Instantiate (MainSymbol, spawnPosition, Quaternion.identity);
 			yield return new WaitForSeconds (spawnWait);
 		}
