@@ -481,9 +481,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainSymbol: {fileID: 413666815}
   spawnValues: {x: 0, y: 0, z: 0}
-  spawnWait: 30
-  startWait: 1
-  fallSpeed: .0500000007
+  spawnWait: 80
+  startWait: 5
+  fallSpeed: .0199999996
   leftSprite: {fileID: 21300000, guid: 1a6d8c0fe46ef49938365954ae0a2dfe, type: 3}
   rightSprite: {fileID: 21300000, guid: 4af42b6600a624205b8860f63311b9b7, type: 3}
   upSprite: {fileID: 21300000, guid: 775fa5472c051458bbae91341300ac50, type: 3}
@@ -779,7 +779,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11463820, guid: f21e4ce413a664fe4af453c210eadb83, type: 2}
       propertyPath: lifetime
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11457734, guid: f21e4ce413a664fe4af453c210eadb83, type: 2}

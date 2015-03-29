@@ -27,14 +27,15 @@ public class RemainingTimeManager : MonoBehaviour
 				countDownEndSeconds--;
 			}
 		}
+		
+		
+		if (GameManager.Instance.matchStarted) {
+			text.text = "Time Remaining: " + countDownEndSeconds;
+		}
 
 		// If the game is over
 		if (countDownEndSeconds <= 0) {
 			GameManager.Instance.EndGame ();
-		}
-		
-		if (GameManager.Instance.matchStarted) {
-			text.text = "Time Remaining: " + countDownEndSeconds;
 		}
 	}
 }

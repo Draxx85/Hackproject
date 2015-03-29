@@ -118,9 +118,9 @@ public class TwerkAnim : MonoBehaviour {
 
 		transitionInt = direction * missAnim;
 
-		Debug.Log ("Transition: " + transitionInt.ToString (), gameObject);
-		Debug.Log ("Move Score: " + score , gameObject);
-		Debug.Log ("Quality: " + animationQuality, gameObject);
+		//Debug.Log ("Transition: " + transitionInt.ToString (), gameObject);
+		//Debug.Log ("Move Score: " + score , gameObject);
+		//Debug.Log ("Quality: " + animationQuality, gameObject);
 		animator.SetInteger ("transitionInt", transitionInt);
 		//qualAnimator[0].SetInteger ("qualityFlag", animationQuality);
 		qualAnimator[1].SetInteger ("qualityFlag", animationQuality);
