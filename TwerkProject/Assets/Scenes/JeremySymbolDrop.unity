@@ -191,6 +191,8 @@ MonoBehaviour:
   drainAmount: 4
   hasNewScore: 1
   scoreDelta: 5
+  sceneToLoad: 
+  matchStarted: 0
 --- !u!4 &398885267
 Transform:
   m_ObjectHideFlags: 0
@@ -693,6 +695,8 @@ MonoBehaviour:
   drainAmount: 4
   hasNewScore: 1
   scoreDelta: 5
+  sceneToLoad: 
+  matchStarted: 0
 --- !u!95 &1859026461
 Animator:
   serializedVersion: 3
@@ -847,6 +851,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11455724, guid: 508578e864f5c40bc848c4028231492a, type: 2}
       propertyPath: startWait
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388160, guid: 508578e864f5c40bc848c4028231492a, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 174092, guid: 508578e864f5c40bc848c4028231492a, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
