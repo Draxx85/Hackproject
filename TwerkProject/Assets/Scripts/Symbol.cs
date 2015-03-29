@@ -2,14 +2,12 @@
 using System.Collections;
 
 public class Symbol : MonoBehaviour {
-	//public GameObject MainSymbol;
 
 	public Vector3 spawnValues;
 	public float spawnWait;
 	public float startWait;
 	public float fallSpeed;
 
-	private Sprite currentSymbol;
 	private SpriteRenderer myRenderer;
 	public Sprite leftSprite;
 	public Sprite rightSprite;
@@ -18,16 +16,7 @@ public class Symbol : MonoBehaviour {
 	
 	public int direction = 0;
 
-	public static float fallSpeedStatic = 0.0f;
-	private static GameObject MainSymbolStatic;
-
 	void Start() {
-		if (MainSymbolStatic == null) {
-			MainSymbolStatic = gameObject;
-			fallSpeedStatic = fallSpeed;
-		}
-		//StartCoroutine (makeSymbol ());
-		//myRenderer = MainSymbol.GetComponent<SpriteRenderer>();
 		myRenderer = gameObject.GetComponent<SpriteRenderer>();
 
 		switch(Random.Range (0,4) )
@@ -51,31 +40,6 @@ public class Symbol : MonoBehaviour {
 		}
 
 		SymbolManager.Instance.mainSymbolList.Enqueue (gameObject);
-		Debug.Log ("Symbol::Start() - symbol count: " + SymbolManager.Instance.mainSymbolList.Count);
-	}
-	
-	IEnumerator makeSymbol ()
-	{
-		yield return new WaitForSeconds (startWait);
-		while (true)
-		{
-			//Vector3 spawnPosition = startLocation;
-			//Instantiate (MainSymbol, spawnPosition, Quaternion.identity);
-
-//			if(SymbolManager.Instance.mainSymbolList.Count > 10){
-//				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;
-//				Destroy (temp, 1);
-//			}
-
-			yield return new WaitForSeconds (spawnWait);
-		}
-	}
-	
-	
-	public static void makeSymbol2 (Vector3 startLocation)
-	{
-		Vector3 spawnPosition = startLocation;
-		Instantiate (MainSymbolStatic, spawnPosition, Quaternion.identity);
 	}
 
 	void Update() {

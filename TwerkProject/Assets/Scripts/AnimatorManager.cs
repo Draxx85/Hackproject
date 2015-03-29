@@ -29,11 +29,9 @@ public class AnimatorManager : MonoBehaviour {
 		explosion = GetComponent<Animator> ();
 
 		if (type == AnimationType.AnimationType_TRIGGER) {
-			Debug.Log("triggering trigger " + triggerName);
 			explosion.SetTrigger (triggerName);
 		} 
 		if(type == AnimationType.AnimationType_BOOL) {
-			Debug.Log("start bool " + triggerName);
 			explosion.SetBool (triggerName, true);
 		}
 	}
@@ -42,7 +40,6 @@ public class AnimatorManager : MonoBehaviour {
 		explosion = GetComponent<Animator> ();
 
 		if(type == AnimationType.AnimationType_BOOL) {
-			Debug.Log("end bool " + triggerName);
 			explosion.SetBool (triggerName, false);
 		}
 	}

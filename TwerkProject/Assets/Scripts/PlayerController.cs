@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//[RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour
 {
 	public static int UP_TRANSITION = 1;
