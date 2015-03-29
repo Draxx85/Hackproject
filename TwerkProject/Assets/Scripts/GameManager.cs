@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void UpdateScore(int delta){
-		if (matchStarted) {
+		if (true) {
 			ScoreManager.score += delta;
 			MeterManager.fill += delta;
 		}

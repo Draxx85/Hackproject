@@ -33,7 +33,8 @@ public class TwerkAnim : MonoBehaviour {
 
 
 	Animator animator;
-	QualityTrigger qualTrig = new QualityTrigger();
+	Animator[] qualAnimator;
+
 
 	int transitionInt = 0;
 	int streak = 0;
@@ -42,6 +43,9 @@ public class TwerkAnim : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
+		qualAnimator = GetComponentsInChildren<Animator> ();
+		//Canvas.Instantiate ();
+		//qualAnimator =  Canvas.GetComponent<Animator> ();
 		animTimer = 0;
 		//this will be removed and determineAnimation will be called by Jeremy's function that finds the accuracy of a move
 		InvokeRepeating("determineRandomAnimation", 0.0f, 4.0f);
@@ -101,14 +105,15 @@ public class TwerkAnim : MonoBehaviour {
 		transitionInt = direction * missAnim;
 
 		Debug.Log ("Transition: " + transitionInt.ToString (), gameObject);
-		Debug.Log ("Streak: " + streak.ToString (), gameObject);
+		Debug.Log ("Move Score: " + score , gameObject);
+		Debug.Log ("Quality: " + animationQuality, gameObject);
 		animator.SetInteger ("transitionInt", transitionInt);
-		qualTrig.showQuality (animationQuality);
+		//qualAnimator[0].SetInteger ("qualityFlag", animationQuality);
+		qualAnimator[1].SetInteger ("qualityFlag", animationQuality);
+		//qualTrig.showQuality (animationQuality);
 
 		animTimer = 0;
 		
 		GameManager.Instance.UpdateScore (getDelta(score, streak));
-		Debug.Log ("Multiplier: " + multiplier.ToString (), gameObject);
-		Debug.Log ("Score: " + ScoreManager.score.ToString (), gameObject);
 	}
 }

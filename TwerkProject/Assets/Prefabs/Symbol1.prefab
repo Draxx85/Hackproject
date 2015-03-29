@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3388160}
   - 136: {fileID: 13612714}
   - 23: {fileID: 2364852}
+  - 114: {fileID: 11455724}
   m_Layer: 0
   m_Name: Symbol1
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MeshFilter:
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &11455724
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174092}
@@ -72,7 +73,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438cfa5a4d3a543b2b729bc0a9ccb0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Symbol: {fileID: 0}
+  MainSymbol: {fileID: 0}
+  UpSymbol: {fileID: 0}
+  DownSymbol: {fileID: 0}
+  LeftSymbol: {fileID: 0}
+  RightSymbol: {fileID: 0}
   spawnValues: {x: 0, y: 0, z: 0}
   spawnWait: 5
   startWait: 1
