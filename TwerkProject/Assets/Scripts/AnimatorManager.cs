@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExplosionManager : MonoBehaviour {
+public class AnimatorManager : MonoBehaviour {
 
 	public enum AnimationType
 	{
@@ -16,7 +16,8 @@ public class ExplosionManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		MeterManager.MeterHasFilled += new MeterManager.OnMeterFullEventHandler(DoAnimation);
+		MeterManager.MeterHasFilled += new MeterManager.OnMeterFullEventHandler(StartAnimation);
+		MeterManager.FreeHasReset += new MeterManager.OnFreeResetEventHandler(EndAnimation);
 	}
 
 	// Update is called once per frame
@@ -24,7 +25,7 @@ public class ExplosionManager : MonoBehaviour {
 	
 	}
 
-	void DoAnimation(){
+	void StartAnimation(){
 		explosion = GetComponent<Animator> ();
 
 		if (type == AnimationType.AnimationType_TRIGGER) {
@@ -32,8 +33,17 @@ public class ExplosionManager : MonoBehaviour {
 			explosion.SetTrigger (triggerName);
 		} 
 		if(type == AnimationType.AnimationType_BOOL) {
-			Debug.Log("triggering bool " + triggerName);
+			Debug.Log("start bool " + triggerName);
 			explosion.SetBool (triggerName, true);
+		}
+	}
+	
+	void EndAnimation(){
+		explosion = GetComponent<Animator> ();
+
+		if(type == AnimationType.AnimationType_BOOL) {
+			Debug.Log("end bool " + triggerName);
+			explosion.SetBool (triggerName, false);
 		}
 	}
 }
