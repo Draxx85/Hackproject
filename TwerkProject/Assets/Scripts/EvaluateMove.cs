@@ -3,16 +3,6 @@ using System.Collections;
 
 public class EvaluateMove : MonoBehaviour
 {
-
-	// We should pull this targetRange from hitbox
-	int targetRange = 120;
-
-	bool isHeightSet = false;
-	public GameObject HitBox;
-	int validRange = 100;
-	const int MAX_SCORE = 100;
-	private bool inFreeMode = false;
-
 	// Singleton
 	public static EvaluateMove Instance {
 		get {
@@ -27,25 +17,32 @@ public class EvaluateMove : MonoBehaviour
 		}
 	}
 
+	private const int MAX_SCORE = 100;
+	
+	private bool isHeightSet = false;
+	private bool inFreeMode = false;
+	private int targetRange = 120;
+
+	public GameObject HitBox;
+
 	public void Start ()
 	{
-		targetRange = (int) HitBox.transform.position.y;
-		//Debug.Log ("target: " +targetRange);
-		validRange = (int) (HitBox.transform.position.y - HitBox.transform.lossyScale.y/2);
-		//Debug.Log ("range: " +targetRange);
+		targetRange = (int)HitBox.transform.position.y;
+
 		MeterManager.MeterHasFilled += new MeterManager.OnMeterFullEventHandler (EnterFreeMode);
 		MeterManager.FreeHasReset += new MeterManager.OnFreeResetEventHandler (ExitFreeMode);
+
 		inFreeMode = false;
 	}
 
 	public void userInputKey (int direction)
 	{
 		if (!inFreeMode) {
-				if (SymbolManager.Instance.mainSymbolList.Count > 0) {
-					GameObject otherSymbol = SymbolManager.Instance.mainSymbolList.Peek () as GameObject;
+			if (SymbolManager.Instance.mainSymbolList.Count > 0) {
+				GameObject otherSymbol = SymbolManager.Instance.mainSymbolList.Peek () as GameObject;
 
 				if (!isHeightSet) {
-					targetRange += (int) otherSymbol.transform.lossyScale.y/2;
+					targetRange += (int)otherSymbol.transform.lossyScale.y / 2;
 					isHeightSet = true;
 				}
 				int symbolDirection = 0;
@@ -79,14 +76,13 @@ public class EvaluateMove : MonoBehaviour
 			}
 		} else {
 			// Give constant score in free mode
-			Debug.Log("Free mode key press");
 			TwerkAnim.Instance.determineAnimation (TwerkAnim.AMAZING_MIN_THRESHOLD, direction);
 		}
 	}
 	
 	private void determineScore (int height, int direction)
 	{
-		TwerkAnim.Instance.determineAnimation (3*Mathf.Max (MAX_SCORE - (Mathf.Abs (height - targetRange)), 0), direction);
+		TwerkAnim.Instance.determineAnimation (3 * Mathf.Max (MAX_SCORE - (Mathf.Abs (height - targetRange)), 0), direction);
 	}
 
 	private void EnterFreeMode ()
