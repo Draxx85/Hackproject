@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/**
+All material in this application solution and source is, unless otherwise stated, 
+the property of Kamau Vassall, Jorge Munoz, Jeremy Bader 
+Copyright and other intellectual property laws protect these materials. 
+Reproduction or retransmission of the materials, in whole or in part, 
+in any manner, without the prior written consent of the copyright holder,
+is a violation of copyright law.
+
+Originating Author: Kamau Vassall, Jorge Munoz, Jeremy Bader 
+
+*----------------------------------------------------------------
+* MeterManager.cs : Tracks the meters progress and when we reach free mode
+*----------------------------------------------------------------
+*/
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -45,11 +59,12 @@ public class MeterManager : MonoBehaviour
 			}
 		}
 		
-		// when free mode is over
+		// When free mode is over
 		if (countDownStartSeconds <= 0) {
-			if(FreeHasReset != null)
-			{
+			if(FreeHasReset != null){
 				FreeHasReset();
+			}else{
+				Debug.LogWarning ("Failed to run FreeHasReset()");
 			}
 		}
 
@@ -64,9 +79,10 @@ public class MeterManager : MonoBehaviour
 		}
 
 		if (slider.value >= slider.maxValue) {
-			if(MeterHasFilled != null)
-			{
+			if(MeterHasFilled != null){
 				MeterHasFilled();
+			}else{
+				Debug.LogWarning ("Failed to run MeterHasFilled()");
 			}
 		}
 	}
@@ -74,7 +90,7 @@ public class MeterManager : MonoBehaviour
 	void ResetMeter(){
 		fill = startValue;
 		inFreeMode = true;
-		Debug.Log ("Meter filled. Resetting the meter");
+		Debug.Log ("Meter filled. Free Mode entered. Resetting the meter.");
 	}
 
 	void ResetFree(){

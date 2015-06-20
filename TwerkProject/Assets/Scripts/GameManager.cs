@@ -1,3 +1,17 @@
+/**
+All material in this application solution and source is, unless otherwise stated, 
+the property of Kamau Vassall, Jorge Munoz, Jeremy Bader 
+Copyright and other intellectual property laws protect these materials. 
+Reproduction or retransmission of the materials, in whole or in part, 
+in any manner, without the prior written consent of the copyright holder,
+is a violation of copyright law.
+
+Originating Author: Kamau Vassall, Jorge Munoz, Jeremy Bader 
+
+*----------------------------------------------------------------
+* GameManager.cs : Tracks the games progress, score, and etc
+*----------------------------------------------------------------
+*/
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -80,10 +94,10 @@ public class GameManager : MonoBehaviour
 		matchStarted = false;
 
 		if (!string.IsNullOrEmpty (sceneToLoad)) {
-			print ("Load Scene: " + sceneToLoad);
+			Debug.Log ("Load Scene: " + sceneToLoad);
 			Application.LoadLevel (sceneToLoad);
 		} else {
-			print ("No scene to load");
+			Debug.Log ("No scene to load");
 		}
 	}
 	

@@ -1,14 +1,29 @@
-﻿using UnityEngine;
+﻿/**
+All material in this application solution and source is, unless otherwise stated, 
+the property of Kamau Vassall, Jorge Munoz, Jeremy Bader 
+Copyright and other intellectual property laws protect these materials. 
+Reproduction or retransmission of the materials, in whole or in part, 
+in any manner, without the prior written consent of the copyright holder,
+is a violation of copyright law.
+
+Originating Author: Kamau Vassall, Jorge Munoz, Jeremy Bader 
+
+*----------------------------------------------------------------
+* Symbol.cs : Handles the creation for the falling symbols
+*----------------------------------------------------------------
+*/
+using UnityEngine;
 using System.Collections;
 
 public class Symbol : MonoBehaviour {
+	
+	private SpriteRenderer myRenderer;
 
 	public Vector3 spawnValues;
 	public float spawnWait;
 	public float startWait;
 	public float fallSpeed;
 
-	private SpriteRenderer myRenderer;
 	public Sprite leftSprite;
 	public Sprite rightSprite;
 	public Sprite upSprite;
