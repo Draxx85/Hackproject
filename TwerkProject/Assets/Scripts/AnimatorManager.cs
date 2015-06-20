@@ -25,6 +25,7 @@ public class AnimatorManager : MonoBehaviour {
 	};
 
 	private Animator explosion;
+
 	public AnimationType type = AnimationType.AnimationType_MAX;
 	public string triggerName;
 

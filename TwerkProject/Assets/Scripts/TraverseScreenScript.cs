@@ -18,10 +18,11 @@ using System.Collections;
 public class TraverseScreenScript : MonoBehaviour {
 
     public string sceneToLoad;
+	public string traverseText = "Click Here or Press Start";
 
     void OnGUI()
     {
-        if (GUI.Button(new Rect(500, 450, 200, 50), "Click Here or Press Start"))
+		if (GUI.Button(new Rect(500, 450, 200, 50), traverseText))
 		{
 			if (!string.IsNullOrEmpty (sceneToLoad)) {
 				Debug.Log ("Load Scene: " + sceneToLoad);

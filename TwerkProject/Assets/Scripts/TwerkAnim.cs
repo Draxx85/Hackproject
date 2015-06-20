@@ -35,25 +35,22 @@ public class TwerkAnim : MonoBehaviour {
 	private const int OKAY = 3;
 	private const int GREAT= 4;
 	private const int AMAZING = 5;
+	
+	private const int STREAK2x = 10;
+	private const int STREAK3x = 20;	
+	private const int STREAK4x = 30;
+	private const int STREAK5x = 40;
 
 	private int animationQuality = 0;
 	private int missAnim = 1;
 	private int multiplier = 1;
 
-	private int STREAK2x = 10;
-	private int STREAK3x = 20;	
-	private int STREAK4x = 30;
-	private int STREAK5x = 40;
+	private Animator animator;
+	private Animator[] qualAnimator;
 
-
-	Animator animator;
-	Animator[] qualAnimator;
-
-
-	int transitionInt = 0;
-	int streak = 0;
-	float animTimer;
-
+	private int transitionInt = 0;
+	private int streak = 0;
+	private float animTimer = 0.0f;
 	
 	// Singleton
 	public static TwerkAnim Instance {
@@ -72,11 +69,7 @@ public class TwerkAnim : MonoBehaviour {
 	void Start () {
 		animator = GetComponent<Animator>();
 		qualAnimator = GetComponentsInChildren<Animator> ();
-		//Canvas.Instantiate ();
-		//qualAnimator =  Canvas.GetComponent<Animator> ();
 		animTimer = 0;
-		//this will be removed and determineAnimation will be called by Jeremy's function that finds the accuracy of a move
-		//InvokeRepeating("determineRandomAnimation", 0.0f, 4.0f);
 	}
 
 	void Update() {

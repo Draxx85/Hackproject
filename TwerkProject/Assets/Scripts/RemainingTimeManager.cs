@@ -21,7 +21,9 @@ public class RemainingTimeManager : MonoBehaviour
 	private Text text;
 	private float deltaTime = 0.0f;
 	private int countDownEndSeconds = 0;
+
 	public int endCountdownTime = 120;
+	public string remainingTimeText = "Time Remaining:";
 	
 	void Awake ()
 	{
@@ -44,7 +46,7 @@ public class RemainingTimeManager : MonoBehaviour
 		
 		
 		if (GameManager.Instance.matchStarted) {
-			text.text = "Time Remaining: " + countDownEndSeconds;
+			text.text = remainingTimeText + " " + countDownEndSeconds;
 		}
 
 		// If the game is over

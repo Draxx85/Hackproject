@@ -21,6 +21,8 @@ public class ScoreManager : MonoBehaviour
 	public static int score;
 
 	private Text text;
+
+	public string scoreText = "Score:";
 	
 	void Awake ()
 	{
@@ -30,6 +32,6 @@ public class ScoreManager : MonoBehaviour
 	
 	void Update ()
 	{
-		text.text = "Score: " + score;
+		text.text = scoreText + " " + score;
 	}
 }
