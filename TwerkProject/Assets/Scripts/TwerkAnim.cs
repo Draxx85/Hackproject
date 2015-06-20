@@ -102,25 +102,30 @@ public class TwerkAnim : MonoBehaviour {
 		return points * multiplier;
 	}
 
-	void nonMissInput (int quality)	{
+	void matchedInput (int quality)	{
 		animationQuality = quality;
 		missAnim = 1;
 		streak++;
 	}
+
+	void missMatchedInput(){
+		// End their multiplier streak and animation chain
+		streak = 0;
+		missAnim = -1;
+		animationQuality = MISS;
+	}
 	
 	public void determineAnimation(int score, int direction){
 		if (score < POOR_MIN_THRESHOLD) {
-			animationQuality = MISS;
-			missAnim = -1;
-			streak = 0;
+			missMatchedInput();
 		} else if (score < OKAY_MIN_THRESHOLD) {
-			nonMissInput (POOR);
+			matchedInput (POOR);
 		} else if (score < GREAT_MIN_THRESHOLD) {
-			nonMissInput (OKAY);
+			matchedInput (OKAY);
 		} else if (score < AMAZING_MIN_THRESHOLD) {
-			nonMissInput (GREAT);
+			matchedInput (GREAT);
 		} else {
-			nonMissInput (AMAZING);
+			matchedInput (AMAZING);
 		}
 
 		transitionInt = direction * missAnim;
