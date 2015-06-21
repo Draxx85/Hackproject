@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 	
 	private float lastDrainTime = 0.0f;
 	private float lastSpawnTime = 0.0f;
-	private Vector3 startLocation = Vector3.zero;
+	public Vector3 startLocation = new Vector3 (954, 683, 0);
 
 	public int drainInterval = 3;
 	public int drainAmount = 12;
@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour
 		ScoreManager.score = 1;
 		lastDrainTime = Time.time;
 		matchStarted = false;
-
-		startLocation = new Vector3 (954, 683, 0);
 	}
 	
 	// Update is called once per frame

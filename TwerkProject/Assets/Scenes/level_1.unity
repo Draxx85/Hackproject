@@ -2192,6 +2192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c77498ba54f3645be056a54c3230de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startLocation: {x: 954, y: 683, z: 0}
   drainInterval: 3
   drainAmount: 12
   hasNewScore: 1
