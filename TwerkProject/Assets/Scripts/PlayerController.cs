@@ -1,4 +1,4 @@
-﻿/**
+/**
 All material in this application solution and source is, unless otherwise stated, 
 the property of Kamau Vassall, Jorge Munoz, Jeremy Bader 
 Copyright and other intellectual property laws protect these materials. 
@@ -24,19 +24,19 @@ public class PlayerController : MonoBehaviour {
 	public void Update () {
 		if (GameManager.Instance.matchStarted) {
 			if (Input.GetButtonDown ("Up")) {
-				EvaluateMove.Instance.userInputKey (UP_TRANSITION);
+				EvaluateMove.Instance.UserInputKey (UP_TRANSITION);
 				Debug.Log ("UP was pressed", gameObject);
 			}
 			if (Input.GetButtonDown ("Right")) {
-				EvaluateMove.Instance.userInputKey (RIGHT_TRANSITION);
+				EvaluateMove.Instance.UserInputKey (RIGHT_TRANSITION);
 				Debug.Log ("RIGHT was pressed", gameObject);
 			}
 			if (Input.GetButtonDown ("Down")) {
-				EvaluateMove.Instance.userInputKey (DOWN_TRANSITION);
+				EvaluateMove.Instance.UserInputKey (DOWN_TRANSITION);
 				Debug.Log ("DOWN was pressed", gameObject);
 			}		
 			if (Input.GetButtonDown ("Left")) {
-				EvaluateMove.Instance.userInputKey (LEFT_TRANSITION);
+				EvaluateMove.Instance.UserInputKey (LEFT_TRANSITION);
 				Debug.Log ("LEFT was pressed", gameObject);
 			}
 		}

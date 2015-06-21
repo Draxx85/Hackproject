@@ -43,8 +43,7 @@ public class AnimatorManager : MonoBehaviour {
 
 		if (type == AnimationType.AnimationType_TRIGGER) {
 			explosion.SetTrigger (triggerName);
-		} 
-		if (type == AnimationType.AnimationType_BOOL) {
+		} else if (type == AnimationType.AnimationType_BOOL) {
 			explosion.SetBool (triggerName, true);
 		}
 	}

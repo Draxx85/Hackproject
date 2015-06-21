@@ -19,8 +19,6 @@ public class Symbol : MonoBehaviour {
 	
 	private SpriteRenderer myRenderer;
 	public Vector3 spawnValues;
-	public float spawnWait;
-	public float startWait;
 	public float fallSpeed;
 	public Sprite leftSprite;
 	public Sprite rightSprite;

@@ -31,8 +31,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnValues: {x: 0, y: 0, z: 0}
-  spawnWait: 10
-  startWait: 1
   fallSpeed: 3
   leftSprite: {fileID: 21300000, guid: 1a6d8c0fe46ef49938365954ae0a2dfe, type: 3}
   rightSprite: {fileID: 21300000, guid: 4af42b6600a624205b8860f63311b9b7, type: 3}
@@ -50,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2475276eaec57fb4ea88d9191319801a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitBox: {fileID: 196854, guid: e6114b1a83db0bc489be358d4260be77, type: 2}
+  hitBox: {fileID: 196854, guid: e6114b1a83db0bc489be358d4260be77, type: 2}
+  maxScore: 100
 --- !u!114 &11499462
 MonoBehaviour:
   m_ObjectHideFlags: 1

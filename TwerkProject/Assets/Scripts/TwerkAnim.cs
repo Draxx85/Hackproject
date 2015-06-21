@@ -79,17 +79,17 @@ public class TwerkAnim : MonoBehaviour {
 		}
 	}
 	
-	public void determineAnimation (int score, int direction) {
+	public void DetermineAnimation (int score, int direction) {
 		if (score < POOR_MIN_THRESHOLD) {
-			missMatchedInput ();
+			MissMatchedInput ();
 		} else if (score < OKAY_MIN_THRESHOLD) {
-			matchedInput (POOR);
+			MatchedInput (POOR);
 		} else if (score < GREAT_MIN_THRESHOLD) {
-			matchedInput (OKAY);
+			MatchedInput (OKAY);
 		} else if (score < AMAZING_MIN_THRESHOLD) {
-			matchedInput (GREAT);
+			MatchedInput (GREAT);
 		} else {
-			matchedInput (AMAZING);
+			MatchedInput (AMAZING);
 		}
 		
 		transitionInt = direction * missAnim;
@@ -99,10 +99,10 @@ public class TwerkAnim : MonoBehaviour {
 		
 		animTimer = 0.0f;
 		
-		GameManager.Instance.UpdateScore (getDelta (score, streak));
+		GameManager.Instance.UpdateScore (GetDelta (score, streak));
 	}
 
-	private void calculateMultiplier (int streak) {
+	private void CalculateMultiplier (int streak) {
 		if (streak < STREAK2x)
 			multiplier = 1;
 		else if (streak < STREAK3x)
@@ -115,22 +115,18 @@ public class TwerkAnim : MonoBehaviour {
 			multiplier = 5;
 	}
 
-	private int getMultiplier () {
-		return multiplier;
-	}
-
-	private int getDelta (int points, int streak) {
-		calculateMultiplier (streak);
+	private int GetDelta (int points, int streak) {
+		CalculateMultiplier (streak);
 		return points * multiplier;
 	}
 
-	private void matchedInput (int quality) {
+	private void MatchedInput (int quality) {
 		animationQuality = quality;
 		missAnim = 1;
 		streak++;
 	}
 
-	private void missMatchedInput () {
+	private void MissMatchedInput () {
 		// End their multiplier streak and animation chain
 		streak = 0;
 		missAnim = -1;
