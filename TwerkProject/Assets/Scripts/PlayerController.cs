@@ -15,15 +15,13 @@ Originating Author: Kamau Vassall, Jorge Munoz, Jeremy Bader
 using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
-{
-	public const int UP_TRANSITION = 1;
-	public const int RIGHT_TRANSITION = 2;
-	public const int DOWN_TRANSITION = 3;
-	public const int LEFT_TRANSITION = 4;
+public class PlayerController : MonoBehaviour {
+	public static readonly int UP_TRANSITION = 1;
+	public static readonly int RIGHT_TRANSITION = 2;
+	public static readonly int DOWN_TRANSITION = 3;
+	public static readonly int LEFT_TRANSITION = 4;
 
-	void Update ()
-	{
+	public void Update () {
 		if (GameManager.Instance.matchStarted) {
 			if (Input.GetButtonDown ("Up")) {
 				EvaluateMove.Instance.userInputKey (UP_TRANSITION);

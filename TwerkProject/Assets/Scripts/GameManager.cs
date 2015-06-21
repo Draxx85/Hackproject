@@ -15,17 +15,17 @@ Originating Author: Kamau Vassall, Jorge Munoz, Jeremy Bader
 using UnityEngine;
 using System.Collections.Generic;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
 	// Singleton
 	public static GameManager Instance {
 		get {
 			return instance;
 		}
 	}
+
 	private static GameManager instance;
-	void Awake ()
-	{
+
+	public void Awake () {
 		if (instance == null) {
 			instance = this;
 		}
@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
 	private float lastDrainTime = 0.0f;
 	private float lastSpawnTime = 0.0f;
 	public Vector3 startLocation = new Vector3 (954, 683, 0);
-
 	public int drainInterval = 3;
 	public int drainAmount = 12;
 	public bool hasNewScore = true;
@@ -45,16 +44,14 @@ public class GameManager : MonoBehaviour
 	public GameObject mainSymbol;
 
 	// Use this for initialization
-	void Start ()
-	{
+	public void Start () {
 		ScoreManager.score = 1;
 		lastDrainTime = Time.time;
 		matchStarted = false;
 	}
 	
 	// Update is called once per frame
-	void Update ()
-	{
+	public void Update () {
 		// For manual update of the score and meter only
 		if (hasNewScore) {
 			UpdateScore (scoreDelta);
@@ -76,19 +73,16 @@ public class GameManager : MonoBehaviour
 		hasNewScore = false;
 	}
 
-	public void UpdateScore (int delta)
-	{
+	public void UpdateScore (int delta) {
 		ScoreManager.score += delta;
 		MeterManager.fill += delta;
 	}
 	
-	public void StartGame ()
-	{
+	public void StartGame () {
 		matchStarted = true;
 	}
 
-	public void EndGame ()
-	{		
+	public void EndGame () {		
 		matchStarted = false;
 
 		if (!string.IsNullOrEmpty (sceneToLoad)) {
@@ -99,8 +93,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 	
-	public void SpawnNewSymbol ()
-	{
+	private void SpawnNewSymbol () {
 		Vector3 spawnPosition = startLocation;
 		Instantiate (mainSymbol, spawnPosition, Quaternion.identity);
 	}

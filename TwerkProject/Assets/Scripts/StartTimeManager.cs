@@ -16,24 +16,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class StartTimeManager : MonoBehaviour
-{
+public class StartTimeManager : MonoBehaviour {
 	private Text text;
 	private float deltaTime = 0.0f;
 	private int countDownStartSeconds = 0;
-
 	public int startCountdownTime = 4;
 	public string startText = "TWERK";
 	
-	void Awake ()
-	{
+	public void Awake () {
 		text = GetComponent <Text> ();
 		deltaTime = Time.time;
 		countDownStartSeconds = startCountdownTime;
 	}
 	
-	void Update ()
-	{
+	public void Update () {
 		// Change the remaining time
 		if (Time.time - deltaTime >= 1.0f) {
 			deltaTime = Time.time;

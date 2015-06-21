@@ -15,21 +15,18 @@ Originating Author: Kamau Vassall, Jorge Munoz, Jeremy Bader
 using UnityEngine;
 using System.Collections;
 
-public class DestroyOnExit : MonoBehaviour
-{
-	void Start ()
-	{
+public class DestroyOnExit : MonoBehaviour {
+	public void Start () {
 	}
 
-	void Update ()
-	{
+	public void Update () {
 		// If there are more floating symbols then we iterate through them
 		if (SymbolManager.Instance.mainSymbolList.Count > 0) {
 
 			// If this object has past boundaries
 			if (gameObject.transform.position.y < 0) {
 
-				// make sure we deque if from our queue then we can destroy it
+				// Make sure we deque if from our queue then we can destroy it
 				GameObject temp = SymbolManager.Instance.mainSymbolList.Dequeue () as GameObject;			
 				if (temp != null) {
 					Destroy (temp);

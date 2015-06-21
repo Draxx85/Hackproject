@@ -15,32 +15,29 @@ Originating Author: Kamau Vassall, Jorge Munoz, Jeremy Bader
 using UnityEngine;
 using System.Collections;
 
-public class EvaluateMove : MonoBehaviour
-{
+public class EvaluateMove : MonoBehaviour {
 	// Singleton
 	public static EvaluateMove Instance {
 		get {
 			return instance;
 		}
 	}
+
 	private static EvaluateMove instance;
-	void Awake ()
-	{
+
+	public void Awake () {
 		if (instance == null) {
 			instance = this;
 		}
 	}
-
-	private const int MAX_SCORE = 100;
 	
 	private bool isHeightSet = false;
 	private bool inFreeMode = false;	// When the meter is filled we go into our special mode
 	private int targetRange = 120;
-
 	public GameObject HitBox;
+	public int maxScore = 100;
 
-	public void Start ()
-	{
+	public void Start () {
 		targetRange = (int)HitBox.transform.position.y;
 
 		MeterManager.MeterHasFilled += new MeterManager.OnMeterFullEventHandler (EnterFreeMode);
@@ -49,8 +46,7 @@ public class EvaluateMove : MonoBehaviour
 		inFreeMode = false;
 	}
 
-	public void userInputKey (int direction)
-	{
+	public void userInputKey (int direction) {
 		if (!inFreeMode) {
 			if (SymbolManager.Instance.mainSymbolList.Count > 0) {
 				GameObject otherSymbol = SymbolManager.Instance.mainSymbolList.Peek () as GameObject;
@@ -99,18 +95,15 @@ public class EvaluateMove : MonoBehaviour
 		}
 	}
 	
-	private void determineScore (int height, int direction)
-	{
-		TwerkAnim.Instance.determineAnimation (3 * Mathf.Max (MAX_SCORE - (Mathf.Abs (height - targetRange)), 0), direction);
+	private void determineScore (int height, int direction) {
+		TwerkAnim.Instance.determineAnimation (3 * Mathf.Max (maxScore - (Mathf.Abs (height - targetRange)), 0), direction);
 	}
 
-	private void EnterFreeMode ()
-	{
+	private void EnterFreeMode () {
 		inFreeMode = true;
 	}
 	
-	private void ExitFreeMode ()
-	{
+	private void ExitFreeMode () {
 		inFreeMode = false;
 	}
 }

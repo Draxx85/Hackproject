@@ -16,40 +16,36 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class MeterManager : MonoBehaviour
-{
-	public delegate void OnMeterFullEventHandler();
-	public delegate void OnFreeResetEventHandler();
+public class MeterManager : MonoBehaviour {
+	public delegate void OnMeterFullEventHandler ();
 
-	private const int YellowThresholdPercent = 200;
-	private const int RedThresholdPercent = 50;
-
-	public static int fill;
+	public delegate void OnFreeResetEventHandler ();
+	
 	public static event OnMeterFullEventHandler MeterHasFilled;
 	public static event OnFreeResetEventHandler FreeHasReset;
-
+	
+	private static readonly int YellowThresholdPercent = 200;
+	private static readonly int RedThresholdPercent = 50;
+	public static int fill;
 	private Slider slider;
 	private float deltaTime = 0.0f;
 	private int countDownStartSeconds = 0;
 	private bool inFreeMode = false;
-
 	public int startValue = 15;
 	public Image fillImage;
 	public int startCountdownTime = 6;
 	
-	void Awake ()
-	{
+	public void Awake () {
 		slider = GetComponent <Slider> ();
-		MeterHasFilled += new OnMeterFullEventHandler(ResetMeter);
-		FreeHasReset += new OnFreeResetEventHandler(ResetFree);
+		MeterHasFilled += new OnMeterFullEventHandler (ResetMeter);
+		FreeHasReset += new OnFreeResetEventHandler (ResetFree);
 		fill = startValue;
 		deltaTime = Time.time;
 		countDownStartSeconds = startCountdownTime;
 		inFreeMode = false;
 	}
 	
-	void Update ()
-	{
+	public void Update () {
 		// Change the remaining time
 		if (Time.time - deltaTime >= 1.0f) {
 			deltaTime = Time.time;
@@ -61,9 +57,9 @@ public class MeterManager : MonoBehaviour
 		
 		// When free mode is over
 		if (countDownStartSeconds <= 0) {
-			if(FreeHasReset != null){
-				FreeHasReset();
-			}else{
+			if (FreeHasReset != null) {
+				FreeHasReset ();
+			} else {
 				Debug.LogWarning ("Failed to run FreeHasReset()");
 			}
 		}
@@ -79,21 +75,21 @@ public class MeterManager : MonoBehaviour
 		}
 
 		if (slider.value >= slider.maxValue) {
-			if(MeterHasFilled != null){
-				MeterHasFilled();
-			}else{
+			if (MeterHasFilled != null) {
+				MeterHasFilled ();
+			} else {
 				Debug.LogWarning ("Failed to run MeterHasFilled()");
 			}
 		}
 	}
 
-	void ResetMeter(){
+	private void ResetMeter () {
 		fill = startValue;
 		inFreeMode = true;
 		Debug.Log ("Meter filled. Free Mode entered. Resetting the meter.");
 	}
 
-	void ResetFree(){
+	private void ResetFree () {
 		inFreeMode = false;
 		countDownStartSeconds = startCountdownTime;
 		Debug.Log ("Free mode over");

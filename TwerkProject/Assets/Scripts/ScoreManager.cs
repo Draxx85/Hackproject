@@ -16,22 +16,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ScoreManager : MonoBehaviour
-{
+public class ScoreManager : MonoBehaviour {
 	public static int score;
-
 	private Text text;
-
 	public string scoreText = "Score:";
 	
-	void Awake ()
-	{
+	public void Awake () {
 		text = GetComponent <Text> ();
 		score = 0;
 	}
 	
-	void Update ()
-	{
+	public void Update () {
 		text.text = scoreText + " " + score;
 	}
 }

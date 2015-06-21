@@ -18,24 +18,20 @@ using System.Collections;
 public class Symbol : MonoBehaviour {
 	
 	private SpriteRenderer myRenderer;
-
 	public Vector3 spawnValues;
 	public float spawnWait;
 	public float startWait;
 	public float fallSpeed;
-
 	public Sprite leftSprite;
 	public Sprite rightSprite;
 	public Sprite upSprite;
 	public Sprite downSprite;
-	
 	public int direction = 0;
 
-	void Start() {
-		myRenderer = gameObject.GetComponent<SpriteRenderer>();
+	public void Start () {
+		myRenderer = gameObject.GetComponent<SpriteRenderer> ();
 
-		switch(Random.Range (0,4) )
-		{
+		switch (Random.Range (0, 4)) {
 		case 0:
 			myRenderer.sprite = leftSprite;
 			direction = 4;
@@ -57,7 +53,7 @@ public class Symbol : MonoBehaviour {
 		SymbolManager.Instance.mainSymbolList.Enqueue (gameObject);
 	}
 
-	void Update() {
-		transform.Translate(spawnValues.x, spawnValues.y - fallSpeed, spawnValues.z);
+	public void Update () {
+		transform.Translate (spawnValues.x, spawnValues.y - fallSpeed, spawnValues.z);
 	}
 }

@@ -17,37 +17,32 @@ using System.Collections;
 
 public class TraverseScreenScript : MonoBehaviour {
 
-    public string sceneToLoad;
+	public string sceneToLoad;
 	public string traverseText = "Click Here or Press Start";
 
-    void OnGUI()
-    {
-		if (GUI.Button(new Rect(500, 450, 200, 50), traverseText))
-		{
+	public void OnGUI () {
+		if (GUI.Button (new Rect (500, 450, 200, 50), traverseText)) {
 			if (!string.IsNullOrEmpty (sceneToLoad)) {
 				Debug.Log ("Load Scene: " + sceneToLoad);
 				Application.LoadLevel (sceneToLoad);
 			} else {
 				Debug.LogWarning ("No scene to load");
 			}
-        }
-    }
+		}
+	}
 
-    void Start()
-    {
-		Debug.Log("Current Scene: " + Application.loadedLevelName);
-    }
+	public void Start () {
+		Debug.Log ("Current Scene: " + Application.loadedLevelName);
+	}
 
-    void Update()
-    {
-        if (Input.GetButton("Submit"))
-		{
+	public void Update () {
+		if (Input.GetButton ("Submit")) {
 			if (!string.IsNullOrEmpty (sceneToLoad)) {
 				Debug.Log ("Load Scene: " + sceneToLoad);
 				Application.LoadLevel (sceneToLoad);
 			} else {
 				Debug.LogWarning ("No scene to load");
 			}
-        }
-    }
+		}
+	}
 }
