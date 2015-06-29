@@ -21,7 +21,8 @@ public class TraverseScreenScript : MonoBehaviour {
 	public string traverseText = "Click Here or Press Start";
 
 	public void OnGUI () {
-		if (GUI.Button (new Rect (500, 450, 200, 50), traverseText)) {
+
+		if (GUI.Button (new Rect (gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, 200, 50), traverseText)) {
 			if (!string.IsNullOrEmpty (sceneToLoad)) {
 				Debug.Log ("Load Scene: " + sceneToLoad);
 				Application.LoadLevel (sceneToLoad);
