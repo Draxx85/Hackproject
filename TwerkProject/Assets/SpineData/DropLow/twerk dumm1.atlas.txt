@@ -1,0 +1,117 @@
+
+twerk dumm1.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Head
+  rotate: true
+  xy: 1203, 231
+  size: 505, 467
+  orig: 507, 469
+  offset: 1, 1
+  index: -1
+Left Butt
+  rotate: false
+  xy: 1067, 1384
+  size: 1175, 660
+  orig: 1177, 662
+  offset: 1, 1
+  index: -1
+Left Foot
+  rotate: false
+  xy: 1672, 293
+  size: 379, 465
+  orig: 381, 467
+  offset: 1, 1
+  index: -1
+Left Hand
+  rotate: false
+  xy: 1203, 27
+  size: 237, 202
+  orig: 239, 204
+  offset: 1, 1
+  index: -1
+Lower Left Leg
+  rotate: true
+  xy: 2, 2
+  size: 567, 798
+  orig: 569, 800
+  offset: 1, 1
+  index: -1
+Lower Right Leg
+  rotate: true
+  xy: 2244, 1550
+  size: 494, 677
+  orig: 496, 679
+  offset: 1, 1
+  index: -1
+Right Butt
+  rotate: false
+  xy: 802, 9
+  size: 399, 560
+  orig: 401, 562
+  offset: 1, 1
+  index: -1
+Right Foot
+  rotate: false
+  xy: 2080, 866
+  size: 364, 444
+  orig: 366, 446
+  offset: 1, 1
+  index: -1
+Right Hand
+  rotate: false
+  xy: 2244, 1312
+  size: 447, 236
+  orig: 449, 238
+  offset: 1, 1
+  index: -1
+Upper Left Leg
+  rotate: false
+  xy: 1067, 738
+  size: 529, 644
+  orig: 531, 646
+  offset: 1, 1
+  index: -1
+Upper Right Arm
+  rotate: true
+  xy: 2923, 1770
+  size: 274, 737
+  orig: 276, 739
+  offset: 1, 1
+  index: -1
+Upper Right Leg
+  rotate: false
+  xy: 1598, 760
+  size: 480, 622
+  orig: 482, 624
+  offset: 1, 1
+  index: -1
+Upper left arm
+  rotate: true
+  xy: 2923, 1587
+  size: 181, 561
+  orig: 183, 563
+  offset: 1, 1
+  index: -1
+Upperbody
+  rotate: false
+  xy: 2, 571
+  size: 1063, 1473
+  orig: 1065, 1475
+  offset: 1, 1
+  index: -1
+left lower arm
+  rotate: true
+  xy: 2446, 911
+  size: 399, 237
+  orig: 401, 239
+  offset: 1, 1
+  index: -1
+right lower arm
+  rotate: false
+  xy: 3662, 1706
+  size: 400, 338
+  orig: 402, 340
+  offset: 1, 1
+  index: -1
