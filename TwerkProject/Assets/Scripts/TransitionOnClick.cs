@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TransitionOnClick : MonoBehaviour {
 
-	public void TranstitionTo(string sceneToLoad){
+	public void TranstitionTo (string sceneToLoad) {
 		Debug.Log ("TransitionOnClick");
 
 		if (!string.IsNullOrEmpty (sceneToLoad)) {
