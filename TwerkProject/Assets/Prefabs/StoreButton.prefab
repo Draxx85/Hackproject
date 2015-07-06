@@ -100,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 197752}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4680cba1705f6f74eab9264cd013a666, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc63f3e1ecadd014da270d5c7f95b64b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 0ac18b5d15297d74197785fddf2cfb3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58f83c1d6fa8d754597900eb82390b59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -176,7 +176,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: level_1
+          m_StringArgument: store
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -242,7 +242,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 5, y: -235.979996}
+  m_AnchoredPosition: {x: 185, y: -227}
   m_SizeDelta: {x: 185, y: 119}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
